@@ -1,9 +1,7 @@
 # This file contains pkgconfig build requirements that get picked up
 # but are undesirable. One entry per line, no whitespace.
-webkit2gtk-4.0
 gio-windows-2.0
 webkitgtk-3.0
-rest-0.7
 libaccounts-glib
 gweather-3.0
 libsignon-glib

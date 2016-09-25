@@ -4,7 +4,7 @@
 #
 Name     : evolution-data-server
 Version  : 3.22.0
-Release  : 1
+Release  : 2
 URL      : https://download.gnome.org/core/3.22/3.22.0/sources/evolution-data-server-3.22.0.tar.xz
 Source0  : https://download.gnome.org/core/3.22/3.22.0/sources/evolution-data-server-3.22.0.tar.xz
 Summary  : The evolution data server for the calendar and addressbook
@@ -39,7 +39,9 @@ BuildRequires : pkgconfig(libgdata)
 BuildRequires : pkgconfig(libical)
 BuildRequires : pkgconfig(libsecret-unstable)
 BuildRequires : pkgconfig(libsoup-2.4)
+BuildRequires : pkgconfig(rest-0.7)
 BuildRequires : pkgconfig(sqlite3)
+BuildRequires : pkgconfig(webkit2gtk-4.0)
 
 %description
 The Evolution Data Server package provides a unified backend for programs that work with
