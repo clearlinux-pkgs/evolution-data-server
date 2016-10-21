@@ -3081,6 +3081,7 @@ libedataserver-1.2.so.22:e_source_connection_status_get_type
 libedataserver-1.2.so.22:e_source_contacts_get_include_me
 libedataserver-1.2.so.22:e_source_contacts_get_type
 libedataserver-1.2.so.22:e_source_contacts_set_include_me
+libedataserver-1.2.so.22:e_source_credentials_google_get_access_token_sync
 libedataserver-1.2.so.22:e_source_credentials_google_is_supported
 libedataserver-1.2.so.22:e_source_credentials_google_util_decode_from_secret
 libedataserver-1.2.so.22:e_source_credentials_google_util_encode_to_secret
