@@ -6,3 +6,8 @@ nss-dev
 gobject-introspection-dev
 gperf
 
+intltool
+openldap-dev
+libsecret-dev
+sqlite-autoconf-dev
+e2fsprogs-dev
