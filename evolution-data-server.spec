@@ -4,7 +4,7 @@
 #
 Name     : evolution-data-server
 Version  : 3.24.0
-Release  : 7
+Release  : 8
 URL      : https://download.gnome.org/sources/evolution-data-server/3.24/evolution-data-server-3.24.0.tar.xz
 Source0  : https://download.gnome.org/sources/evolution-data-server/3.24/evolution-data-server-3.24.0.tar.xz
 Summary  : The evolution data server for the calendar and addressbook
@@ -98,7 +98,7 @@ locales components for the evolution-data-server package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1490628268
+export SOURCE_DATE_EPOCH=1491490309
 mkdir clr-build
 pushd clr-build
 export CFLAGS="$CFLAGS -Os -ffunction-sections "
@@ -110,7 +110,7 @@ make VERBOSE=1  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1490628268
+export SOURCE_DATE_EPOCH=1491490309
 rm -rf %{buildroot}
 pushd clr-build
 %make_install
