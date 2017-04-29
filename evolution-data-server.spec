@@ -4,7 +4,7 @@
 #
 Name     : evolution-data-server
 Version  : 3.24.1
-Release  : 9
+Release  : 10
 URL      : https://download.gnome.org/sources/evolution-data-server/3.24/evolution-data-server-3.24.1.tar.xz
 Source0  : https://download.gnome.org/sources/evolution-data-server/3.24/evolution-data-server-3.24.1.tar.xz
 Summary  : The evolution data server for the calendar and addressbook
@@ -25,7 +25,6 @@ BuildRequires : libsecret-dev
 BuildRequires : libxml2-dev
 BuildRequires : nss-dev
 BuildRequires : openldap-dev
-BuildRequires : perl(XML::Parser)
 BuildRequires : pkgconfig(krb5)
 BuildRequires : pkgconfig(libgdata)
 BuildRequires : pkgconfig(libical)
@@ -97,20 +96,26 @@ locales components for the evolution-data-server package.
 %setup -q -n evolution-data-server-3.24.1
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1491838205
+export SOURCE_DATE_EPOCH=1493436857
 mkdir clr-build
 pushd clr-build
-export CFLAGS="$CFLAGS -Os -ffunction-sections "
-export FCFLAGS="$CFLAGS -Os -ffunction-sections "
-export FFLAGS="$CFLAGS -Os -ffunction-sections "
-export CXXFLAGS="$CXXFLAGS -Os -ffunction-sections "
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto -fno-semantic-interposition "
+export FCFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto -fno-semantic-interposition "
+export FFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto -fno-semantic-interposition "
+export CXXFLAGS="$CXXFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto -fno-semantic-interposition "
 cmake .. -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_SHARED_LIBS:BOOL=ON -DLIB_INSTALL_DIR:PATH=%{_libdir} -DCMAKE_AR=/usr/bin/gcc-ar -DLIB_SUFFIX=64 -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_RANLIB=/usr/bin/gcc-ranlib -DENABLE_GOOGLE_AUTH=OFF  -DENABLE_UOA=OFF  -DENABLE_WEATHER=OFF
 make VERBOSE=1  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1491838205
+export SOURCE_DATE_EPOCH=1493436857
 rm -rf %{buildroot}
 pushd clr-build
 %make_install
