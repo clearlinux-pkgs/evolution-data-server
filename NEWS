@@ -1,109 +1,231 @@
-Evolution-Data-Server 3.24.6 2017-09-07
+Evolution-Data-Server 3.26.0 2017-09-11
 ---------------------------------------
+
+Translations:
+	Pawan Chitrakar (ne)
+	Jordi Mas (ca)
+	Inaki Larranaga Murgoitio (eu)
+	Ask Hjorth Larsen (da)
+	Emin Tufan Çetin (tr)
+	Muhammet Kara (tr)
+	Anders Jonsson (sv)
+	Gianvito Cavasoli (it)
+
+Evolution-Data-Server 3.25.92 2017-09-04
+----------------------------------------
+
+Bug Fixes:
+	Bug 785952 - Google Tasks refresh fails with Bad Request (Milan Crha)
+	Bug 786362 - Keep changed messages in Search Folder view until refreshed (Milan Crha)
+	Bug 553770 - e_time_get_d_fmt_with_4digit_year: Correct %y replacement (Milan Crha)
+	Bug 548814 - [On The Web] Cannot read multiple VCALENDAR objects in single file (Milan Crha)
+	Bug 563602 - Detached recurrence ignored after import until EDS is restarted (Milan Crha)
+
+Miscellaneous:
+	[ESoupSession] Treat G_TLS_ERROR_BAD_CERTIFICATE as SOUP_STATUS_SSL_FAILED (Milan Crha)
+	[CalDAV/CardDAV] Check for TLS/authentication errors on refresh (Milan Crha)
+	[IMAPx] Not all local changes saved to the server (Milan Crha)
+	camel_store_get_inbox_folder() can fail for IMAPx stores (Milan Crha)
+	[EWebDAVDiscoverWidget] Minor changes to error label (Milan Crha)
+	[ECalMetaBackend] Removing detached instance doesn't set EXDATE (Milan Crha)
+	[IMAPx] Handle gracefully when service is unavailable for get_folder_info() (Milan Crha)
+	Merge a cmake/modules change from Evolution (Milan Crha)
+
+Translations:
+	Fabio Tomat (fur)
+	Ask Hjorth Larsen (da)
+	Piotr Drąg (pl)
+	Rūdolfs Mazurs (lv)
+	Милош Поповић (sr)
+	Милош Поповић (sr@latin)
+	Rafael Fontenelle (pt_BR)
+	Jordi Mas (ca)
+	Wolfgang Stöggl (de)
+	Jiri Grönroos (fi)
+	Changwoo Ryu (ko)
+	Dušan Kazik (sk)
+
+Evolution-Data-Server 3.25.91 2017-08-21
+----------------------------------------
 
 Bug Fixes:
 	Bug 781901 - [CamelOperation] Do not use g_cancellable_connect/disconnect() (Milan Crha)
+	Bug 786366 - Convert C source files to UTF-8 (Jan Alexander Steffens (heftig))
+
+Miscellaneous:
+	Add new developer documentation file into evolution-data-server-docs.sgml.in (Milan Crha)
 
 Translations:
+	Kukuh Syafaat (id)
+	Fabio Tomat (fur)
+	Fran Dieguez (gl)
 	Gianvito Cavasoli (it)
-	Мирослав Николић (sr)
-	Мирослав Николић (sr@latin)
 	Aurimas Černius (lt)
-	Balázs Úr (hu)
+	Pawan Chitrakar (ne)
+	Gábor Kelemen (hu)
+	Marek Cernocky (cs)
+	Anish Sheela (ml)
 
-Evolution-Data-Server 3.24.5 2017-08-07
----------------------------------------
+Evolution-Data-Server 3.25.90 2017-08-07
+----------------------------------------
 
 Bug Fixes:
 	Bug 785136 - Summary changes can be lost on folder leave (Milan Crha)
 	Bug 785188 - Do not add LIB_INSTALL_DIR into RPATH (Milan Crha)
 	Bug 785212 - Quit with a large vFolder causes load of each message info (Milan Crha)
+	Bug 785284 - Add asynchronous variant for camel_offline_store_set_online_sync() (Milan Crha)
+	Bug 785340 - Change "IMAP+" server type to "IMAP" in GUI (Milan Crha)
 	Bug 785393 - [ESourceRefresh] Let zero Refresh interval mean 'No periodic update' (Milan Crha)
+	Bug 785629 - Document the CamelStoreGetFolderFlags (Corentin Noël)
+	Bug 785647 - Fix some warnings within the documentation (Corentin Noël)
+	Bug 785718 - Optimize Maildir sync/check to not load whole summary (Milan Crha)
 
 Miscellaneous:
+	Make EWebDAVSession soft-depend on ESourceWebdav extension (Milan Crha)
+	Introduce EWebDAVCollectionBackend to be used for WebDAV-discovered collections (Milan Crha)
 	Workaround issue with badRequest/invalid format for Google address book (Milan Crha)
 	Deadlock on exit under e-categories.c:finalize_categories() (Milan Crha)
+	[EWebDAVDiscover] Correct href sets reading (Milan Crha)
 	[Vala] Fix a warning with a virtual method being the same name as another method (Corentin Noël)
+	Rename owncloud-backend module to webdav-backend (Milan Crha)
+	Add calendar and contacts URLs into ESourceCollection extension (Milan Crha)
 
 Translations:
+	Andika Triwidada (id)
+	Daniel Mustieles (es)
 	Marek Cernocky (cs)
+	Baurzhan Muftakhidinov (kk)
+	Pawan Chitrakar (ne)
 	Matej Urbančič (sl)
 
-Evolution-Data-Server 3.24.4 2017-07-17
+Evolution-Data-Server 3.25.4 2017-07-17
 ---------------------------------------
 
 Bug Fixes:
 	Bug 493801 - [IMAPx] Locally cached files not deleted after message remove (Milan Crha)
+	Bug 343904 - [POP3] Local cache keeps stored orphaned files (Milan Crha)
 	Bug 779753 - [NNTP] Removed messages from server kept in local cache (Milan Crha)
+	Bug 338649 - [NNTP] Add option to limit message download count (Milan Crha)
 	Bug 784116 - Preserve header's folding misbehaves for folded boundary parameter (James Bottomley)
+	Bug 784182 - Change how code snippets are marked in developer comments (Ting-Wei Lan)
 	Bug 779156 - [IMAPx] Not listening for changes after resume from suspend ][ (Milan Crha)
+	Bug 784183 - tests/libedata-cal/test-cal-cache-utils.c needs sys/wait.h (Ting-Wei Lan)
+	Bug 784218 - [Camel] Document some variables to make them available in the introspection (Corentin Noël)
+	Bug 772572 - Allow creating Receive-only mail accounts (Milan Crha)
+	Bug 781744 - Support not storing sent messages (Milan Crha)
 	Bug 782844 - Folder changes not always saved (Milan Crha)
+	Bug 781790 - Configure signature and start cursor position per account (Milan Crha)
 	Bug 784548 - Collection credentials used for different SMTP server (Milan Crha)
+	Bug 784746 - Remove version number from gettext package name (Jeremy Bicha)
 
 Miscellaneous:
+	Better react on connection lost in EBookMetaBackend/ECalMetaBackend (Milan Crha)
+	Introduce 'list-sources' tool (Milan Crha)
+	Use the fancy Unicode apostrophes in the “list-sources” tool (Piotr Drąg)
+	Change --module-dir for gtkdoc-fixxref call (Milan Crha)
 	Warn and set default when sendmail not found during the build (Milan Crha)
-	Correct localization of external tool (Milan Crha)
+	Expose D-Bus service names in evolution-data-server pkg-config file (Milan Crha)
+	Correct localization of external tools (Milan Crha)
 
 Translations:
-	Baurzhan Muftakhidinov (kk)
+	Daniel Mustieles (es)
 	Piotr Drąg (pl)
 	Rafael Fontenelle (pt_BR)
-	Mario Blättermann (de)
 	Anders Jonsson (sv)
 	Kukuh Syafaat (id)
+	Gábor Kelemen (hu)
+	Mario Blättermann (de)
 
-Evolution-Data-Server 3.24.3 2017-06-19
+Evolution-Data-Server 3.25.3 2017-06-19
 ---------------------------------------
 
 Bug Fixes:
-	Bug 782360 - Remove src/addressbook/docs/ from git and releases (Milan Crha)
-	Bug 782362 - csv2vcard not marked as executable (Milan Crha)
-	Bug 782377 - ESourceWebdav overrides ESourceAuthentication::method (Milan Crha)
 	Bug 782096 - Folder unread count sometimes doesn't update properly (Milan Crha)
 	Bug 770476 - Crash on exit in object_bag_notify() (Milan Crha)
 	Bug 783385 - Prefer SSL over STARTTLS for mail when both are set in GOA (Milan Crha)
 
 Miscellaneous:
-	Remove forgotten debug print (Milan Crha)
-	Add CamelWeakRefGroup to camel-docs.sgml (Milan Crha)
-	Mis-filters emails with Mailing List rule in certain situations (Milan Crha)
 	Prevent busy-loop opening Google calendar configured in GOA (Milan Crha)
+	Rename "WebDAV" books group to "CardDAV" (Milan Crha)
+	Make some EBookMetaBackend/ECalMetaBackend private functions public (Milan Crha)
+	Deprecate e_uid_new() in favor of e_util_generate_uid() (Milan Crha)
+	[ESoupSession] Prefer request's URI when setting OAuth2 authorizer (Milan Crha)
+	[EBookCache/ECalCache] Understand '#t' search expression as 'list all' (Milan Crha)
 	Prevent GError override in e_cal_backend_sync_get_timezone() (Milan Crha)
+	Publicize immediate refresh function for EBookMetaBackend/ECalMetaBackend (Milan Crha)
+	Fix few memory leaks (Milan Crha)
+	Correct ECalMetaBackend::get_object_sync() implementation (Milan Crha)
+	Be able to get all UID/id-s from book/cal cache with certain 'extra' data (Milan Crha)
+	Fix a crash under e_webdav_discover_traverse_propfind_response_cb() (Milan Crha)
+	Introduce ESourceRegistryWatcher (Milan Crha)
+	Update ESource's connection-status in EBookMetaBackend/ECalMetaBackend (Milan Crha)
 	Allow overwrite of CMAKE_SKIP_RPATH variable (Milan Crha)
 
-Evolution-Data-Server 3.24.2 2017-05-08
+Translations:
+	Mario Blättermann (de)
+	Kukuh Syafaat (id)
+	Daniel Mustieles (es)
+	Jordi Mas (ca)
+	Fabio Tomat (fur)
+	Kjartan Maraas (nb)
+	Baurzhan Muftakhidinov (kk)
+
+Evolution-Data-Server 3.25.2 2017-05-22
 ---------------------------------------
 
 Bug Fixes:
+	Bug 781833 - Do not set '-Wl,--no-undefined' on BSD (Antoine Jacoutot)
+	Bug 779749 - [NNTP] Add exclusive usage locking for underlying stream (Milan Crha)
+	Bug 782360 - Remove src/addressbook/docs/ from git and releases (Milan Crha)
+	Bug 782362 - csv2vcard not marked as executable (Milan Crha)
+	Bug 782377 - ESourceWebdav overrides ESourceAuthentication::method (Milan Crha)
+	Bug 782745 - Build failure of vapi bindings (xmlDocPtr ~> xmlDoc *) (Milan Crha)
+	Bug 782799 - On The Web calendar update incorrectly cancelled (Milan Crha)
+	Bug 782847 - Some fixes to the developer documentation (Corentin Noël)
+
+Miscellaneous:
+	Remove forgotten debug print (Milan Crha)
+	Add CamelWeakRefGroup to camel-docs.sgml (Milan Crha)
+	Merge offline-cache changes into master (Milan Crha)
+	Unicode typography fixes (Piotr Drąg)
+	Bump libical dependency to 2.0 for ICAL_FILENAME_PARAMETER (Milan Crha)
+	Fix possible use of uninitialized variables in the new code (Milan Crha)
+	Correct some developer code comments and annotations (Milan Crha)
+	Introduce e_util_generate_uid() (Milan Crha)
+	Re-apply missed change for bug 781543 after the offline-cache code merge (Milan Crha)
+	Mis-filters emails with Mailing List rule in certain situations (Milan Crha)
+	On The Web calendars don't work when the server doesn't return ETag header (Milan Crha)
+
+Translations:
+	Kukuh Syafaat (id)
+	Daniel Mustieles (es)
+
+Evolution-Data-Server 3.25.1 2017-04-24
+---------------------------------------
+
+Bug Fixes:
+	Bug 780617 - [IMAPx] Allow FETCH response split into multiple lines (Milan Crha)
+	Bug 777161 - [CalDAV] Deadlock after refresh of OAuth2 token (Milan Crha)
 	Bug 777042 - [NNTP] Offline access not working when server service unreachable (Milan Crha)
 	Bug 656635 - Use-after-free when setting summary for component with alarms (Milan Crha)
 	Bug 781376 - [LDAP] Search in supported fields only (Milan Crha)
 	Bug 781465 - Add db4_load and db_load-4 to DB_LOAD NAMES (Antoine Jacoutot)
 	Bug 781543 - Provide all Google Task lists (Milan Crha)
 	Bug 781549 - [IMAPx] Treat UID as unsigned integer (Milan Crha)
-	Bug 781833 - Do not set '-Wl,--no-undefined' on BSD (Antoine Jacoutot)
-	Bug 779749 - [NNTP] Add exclusive usage locking for underlying stream (Milan Crha)
-
-Miscellaneous:
-	Correct two libecal/client tests (Milan Crha)
-	[IMAPx] Unsubscribed folders shown after refresh (Milan Crha)
-	[IMAPx] Fix a memory leak of CamelIMAPXServer (Milan Crha)
-
-Evolution-Data-Server 3.24.1 2017-04-10
----------------------------------------
-
-Bug Fixes:
-	Bug 780617 - [IMAPx] Allow FETCH response split into multiple lines (Milan Crha)
-	Bug 777161 - [CalDAV] Deadlock after refresh of OAuth2 token (Milan Crha)
 
 Miscellaneous:
 	Revert "Disable support for all POP3 extensions by default" (Milan Crha)
 	Fix maybe-used-uninitialized compiler warning from camel-pop3-folder.c (Milan Crha)
 	Fix few Coverity scan issues (Milan Crha)
+	Correct two libecal/client tests (Milan Crha)
+	[IMAPx] Unsubscribed folders shown after refresh (Milan Crha)
+	[IMAPx] Fix a memory leak of CamelIMAPXServer (Milan Crha)
 
 Translations:
+	Ask Hjorth Larsen (da)
 	Piotr Drąg (pl)
 	Rūdolfs Mazurs (lv)
+	Cédric Valmary (oc)
 
 Evolution-Data-Server 3.24.0 2017-03-20
 ---------------------------------------
