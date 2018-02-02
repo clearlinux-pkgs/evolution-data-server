@@ -4,7 +4,7 @@
 #
 Name     : evolution-data-server
 Version  : 3.26.4
-Release  : 22
+Release  : 23
 URL      : https://download.gnome.org/sources/evolution-data-server/3.26/evolution-data-server-3.26.4.tar.xz
 Source0  : https://download.gnome.org/sources/evolution-data-server/3.26/evolution-data-server-3.26.4.tar.xz
 Summary  : The evolution data server for the calendar and addressbook
