@@ -11,3 +11,5 @@ openldap-dev
 libsecret-dev
 sqlite-autoconf-dev
 e2fsprogs-dev
+liboauth-dev
+webkitgtk-dev
