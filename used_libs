@@ -14,9 +14,8 @@ libgobject-2.0.so.0
 libgssapi_krb5.so.2
 libgtk-3.so.0
 libical.so.3
-libicui18n.so.55
-libicuuc.so.55
-libjson-glib-1.0.so.0
+libicui18n.so.61
+libicuuc.so.61
 liblber-2.4.so.2
 libldap-2.4.so.2
 libnspr4.so
@@ -29,6 +28,5 @@ libsoup-2.4.so.1
 libsqlite3.so.0
 libssl3.so
 libstdc++.so.6
-libwebkit2gtk-4.0.so.37
 libxml2.so.2
 libz.so.1

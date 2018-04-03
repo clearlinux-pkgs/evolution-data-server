@@ -5,6 +5,7 @@ db-dev
 nss-dev
 gobject-introspection-dev
 gperf
+usrbinpython
 python3
 intltool
 openldap-dev
