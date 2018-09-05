@@ -4,3 +4,10 @@ gio-windows-2.0
 webkitgtk-3.0
 libaccounts-glib
 libsignon-glib
+${mozilla_nspr}
+${mozilla_nss}
+_module0
+gcr-base-3>=${gcr_minimum_version}
+libical>=${libical_minimum_version}
+libsecret-unstable>=${libsecret_minimum_version}
+sqlite3>=${sqlite_minimum_version}

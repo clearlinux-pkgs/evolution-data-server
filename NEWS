@@ -1,100 +1,196 @@
-Evolution-Data-Server 3.28.5 2018-07-30
+Evolution-Data-Server 3.30.0 2018-09-03
 ---------------------------------------
 
+Translations:
+	Changwoo Ryu (ko)
+	Fran Dieguez (gl)
+	Rafael Fontenelle (pt_BR)
+	Ask Hjorth Larsen (da)
+	Anders Jonsson (sv)
+
+Evolution-Data-Server 3.29.92 2018-08-27
+----------------------------------------
+
 Bug Fixes:
+	I#23 - [IMAPx] Fails to parse some BODYSTRUCTURE responses (Milan Crha)
+	I#27 - [IMAPx] Ignore DavMail's CR/LF in BODYSTRUCTURE response (Igor Makarov)
+	I#26 - test-book-client-write-write test is failing (Milan Crha)
+	I#25 - [CamelVeeFolder] Implement CamelFolderClass::get_message_cached() (Milan Crha)
+	evo-I#83 - Follow Up "is not Completed" search condition does not work (Milan Crha)
+
+Miscellaneous:
+	Correct build when nss/nspr do not provide pkg-config files (Milan Crha)
+	Use 48 pixel icon in reminder notification (Milan Crha)
+	[evolution-alarm-notify] Do not show a window with a list of pending reminders by default (Milan Crha)
+	GNOME Shell doesn't show evolution-alarm-notification reminders (Milan Crha)
+	Correct few annotations in developer comments (Milan Crha)
+
+Translations:
+	Claude Paroz (fr)
+	Piotr Drąg (pl)
+	Jiri Grönroos (fi)
+	Bruce Cowan (en_GB)
+	Efstathios Iosifidis (el)
+	Cheng-Chia Tseng (zh_TW)
+	Emin Tufan Çetin (tr)
+	Baurzhan Muftakhidinov (kk)
+	Kukuh Syafaat (id)
+	Çağatay Yiğit Şahin (tr)
+
+Evolution-Data-Server 3.29.91 2018-08-13
+----------------------------------------
+
+Translations:
+	Daniel Mustieles (es)
+	Mario Blättermann (de)
+	Fabio Tomat (fur)
+
+Evolution-Data-Server 3.29.90 2018-07-30
+----------------------------------------
+
+Bug Fixes:
+	Bug 788370 - Rename address book WebDAV backend to CardDAV (Milan Crha)
 	I#22 - [Camel] Store disconnect can abort just started downsync for offline (Milan Crha)
 	I#19 - Check also /var/db/zoneinfo when looking for system timezone (Milan Crha)
 
 Miscellaneous:
 	ESourceRegistry's thread main_context can leak (Milan Crha)
+	Correct format specifier arguments to work on both 32-bit and 64-bit arches (Milan Crha)
 	[EClient] Really default readonly property to FALSE (Milan Crha)
+	[CamelDebug] Change when backtraces are demangled in pointer tracker (Milan Crha)
+	[CamelOfflineFolder] Fix a runtime warning on application exit (Milan Crha)
+	Enhance attachment detection in a MIME message (Milan Crha)
 
 Translations:
-	Guillaume Bernard (fr)
+	Aurimas Černius (lt)
 
-Evolution-Data-Server 3.28.4 2018-07-16
+Evolution-Data-Server 3.29.4 2018-07-16
 ---------------------------------------
 
 Bug Fixes:
-	Bug 796174 - strcat() considered unsafe for buffer overflow (Milan Crha)
 	Bug 702127 - Crash under cal_backend_store_save_cache_now() ][ (Milan Crha)
+	Bug 704246 - Cannot send encrypted mail to contact with certificate (Milan Crha)
+	I#9 - [IMAPx] Remove stale cache files in a dedicated thread (Milan Crha)
+	I#10 - [CalDAV/CardDAV] Avoid GET after PUT when the server didn't modify the component (Milan Crha)
+	I#11 - Better error message when WebDAV GET response has missing href or ETag (Дилян Палаузов)
 	I#12 - vCard REV attribute should be a timestamp (Milan Crha)
+	evo-I#37 - Color support for iCalendar entries (Milan Crha)
 	I#13 - [IMAPx] Fails to append message to Yahoo! with no CRLF at the end (Milan Crha)
+	I#3 - [GPG] Mails that are not encrypted look encrypted (Milan Crha)
 	I#14 - [IMAPx] Use extended LIST with Cyrus IMAP >= 2.5.11 (Milan Crha)
+	I#16 - [IMAPx] BODYSTRUCTURE extension fields not skipped properly (Milan Crha)
+	I#17 - [EWebDAVDiscoverWidget] Do not require filled user name (Milan Crha)
 
 Miscellaneous:
+	Use Unicode in new translatable strings (Piotr Drąg)
+	[Camel] Bulk message copy/move during folder filtering (Milan Crha)
 	Make sure errors reported from backends are valid UTF-8 strings (Milan Crha)
 	[CamelSMIMEContext] Fix a memory leak (Milan Crha)
+	[CalDAV/CardDAV] Consider collection writable also with DAV:write-content hint (Milan Crha)
 	[IMAPx] Search for whole word "Cyrus" when parsing version from the server response (Milan Crha)
+	[ECalCache] Alter timezones table only if the 'refs' column doesn't exist (Milan Crha)
 
-Evolution-Data-Server 3.28.3 2018-06-18
+Translations:
+	Fabio Tomat (fu)
+
+Evolution-Data-Server 3.29.3 2018-06-18
 ---------------------------------------
 
 Bug Fixes:
-	Bug 795997 - Fails to parse Google OAuth2 authorization code (Milan Crha)
-	Bug 796206 - CalDAV PUT's If-Match ETag is double quoted (Milan Crha)
 	Bug 796115 - [EWebDAVDiscover] Propagate auth error from .well-known addresses (Milan Crha)
 	Bug 796116 - [webcal] Skip UTF-8 marker when parsing iCalendar string (Milan Crha)
+	Bug 793927 - [Google book] Do not use URI as contact UID (Milan Crha)
 	Bug 796281 - [Calendar] Runtime warning when searching in empty Description (Milan Crha)
 	Bug 763029 - S/MIME encrypt fails to find certificate in other slots (Milan Crha)
 	Bug 792610 - Consider alternate signer emails in sender address verification (Milan Crha)
+	Bug 796136 - [IMAPx] Guess message info's attachment flag more accurately (Milan Crha)
+	Bug 794108 - ETimezoneCache only grows (Milan Crha)
+	Bug 795197 - Add an API to refresh collection backend (Milan Crha)
+	Bug 795869 - Synchronize color of WebDAV resources (Milan Crha)
+	Bug 796174 - strcat() considered unsafe for buffer overflow (Milan Crha)
 	I#2 - Confusing counts when downloading messages for offline (Milan Crha)
 	I#4 - Incorrectly says signature from KMail is invalid (Milan Crha)
+	I#7 - Missing build dependency for gdbus-codegen on input .xml file (Milan Crha)
+	I#5 - Compare only date when searching with Sent/Received dates (Milan Crha)
+	I#6 - Can throw an error when parsing BODYSTRUCTURE response (Milan Crha)
 
 Miscellaneous:
-	Address some of the clang warnings (Milan Crha)
-	Correct some public headers in libedataserverui (Milan Crha)
-	Address some of the compiler and static analyzers warnings (Milan Crha)
-	[module-secret-monitor] Correct runtime warning from secret_service_search_sync() (Milan Crha)
 	Check for ICAL_STATUS_DELETED status enum value (Milan Crha)
-	Correct find_program() for python with multiple names (Milan Crha)
+	Correct prototypes of some virtual functions of EReminderWatcher (Milan Crha)
+	Fix a memory leak (Milan Crha)
+	Use Unicode in translatable strings (Milan Crha)
 	Silently skip empty lines when reading autoconfig-variables (Milan Crha)
 	Update bug URL and switch to https:// in the DOAP file (Milan Crha)
 	Google's "Daily Limit Exceeded" error not always propagated into UI (Milan Crha)
+	[IMAPx] Prefer existing allocate/deallocate structure functions (Milan Crha)
 	[CalDAV] Race condition on connection object (Milan Crha)
 	Correct false runtime warning from camel_folder_info_build() (Milan Crha)
 
 Translations:
-	Marek Černocký (cs)
-	Matej Urbančič (sl)
+	Christian Kirbach (de)
+	Daniel Mustieles (es)
+	Jordi Mas (ca)
 
-Evolution-Data-Server 3.28.2 2018-05-07
+Evolution-Data-Server 3.29.2 2018-05-21
 ---------------------------------------
 
 Bug Fixes:
-	Bug 795108 - Trailing bracket not stripped when linkifying URL inside angle brackets (Milan Crha)
-	Bug 791475 - Incorrectly parses headers in certain case ]I[ (Milan Crha)
 	Bug 795295 - Fails to compile after icu 61.1 upgrade (icu::UnicodeString) (Hussam Al-Tayeb)
+	Bug 794874 - [CalDAV/CardDAV] Use current-user-privilege-set to determine whether writeable (Milan Crha)
 	Bug 795414 - Errors on delete of a detached instance (Milan Crha)
 	Bug 794727 - [IMAPx] False unsubscribed signal emitted when LSUB is required (Milan Crha)
+	Bug 795997 - Fails to parse Google OAuth2 authorization code (Milan Crha)
+	Bug 585146 - Default to show Reminders window on notification (Milan Crha)
+	Bug 796206 - CalDAV PUT's If-Match ETag is double quoted (Milan Crha)
 
 Miscellaneous:
+	Introduce EReminderWatcher to listen for scheduled reminders (Milan Crha)
 	Link WebKitGTK+ only with libedataserverui when OAuth2 is enabled (Milan Crha)
+	[CamelSaslGssapi] Claim detailed error when org.gnome.KrbAuthDialog not found (Milan Crha)
 	Stale connection used after resume (Milan Crha)
+	Correct some public headers in libedataserverui (Milan Crha)
+	Move evolution-alarm-notify to evolution-data-server (Milan Crha)
+	Address some of the clang warnings (Milan Crha)
+	Address some of the compiler and static analyzers warnings (Milan Crha)
+	[EReminderWatcher] Make it possible to override ECalClient connect functions (Milan Crha)
+	[module-secret-monitor] Correct runtime warning from secret_service_search_sync() (Milan Crha)
 
 Translations:
-	Balázs Meskó (hu)
-	Mario Blättermann (de)
-	Muhammet Kara (tr)
-	Kukuh Syafaat (id)
+	Efstathios Iosifidis (el)
+	Daniel Mustieles (es)
+	Marek Černocký (cs)
+	Matej Urbančič (sl)
 
-Evolution-Data-Server 3.28.1 2018-04-09
+Evolution-Data-Server 3.29.1 2018-04-16
 ---------------------------------------
 
 Bug Fixes:
 	Bug 767683 - Crash when updating Maildir 'changes' structure (Milan Crha)
+	Bug 793031 - Decrease memory usage by disabling backend-per-process by default ][ (Milan Crha)
+	Bug 793488 - Drop hard build dependency on python (and partly perl) (Milan Crha)
+	Bug 788193 - [itip-formatter] Describe used recurrence, if possible (Milan Crha)
 	Bug 725295 - Crash in e_cal_backend_remove_view() (Milan Crha)
+	Bug 793963 - Add debugging for GOA accounts (Milan Crha)
+	Bug 200907 - Add support for recurring tasks (Milan Crha)
+	Bug 794417 - Let expand recurring tasks when generating reminders (Milan Crha)
 	Bug 794434 - [EWebDAVDiscover] The .well-known addresses not tried after first failure (Milan Crha)
 	Bug 794534 - Runtime warning when Content-Type header is invalid (Milan Crha)
 	Bug 794628 - Don't preload timezones on libical 3.0.2+ (Dan Nicholson)
 	Bug 793601 - [IMAPx] Asks for password when server is unavailable (Milan Crha)
 	Bug 794639 - Sender/signer address comparison should not be case sensitive (Milan Crha)
 	Bug 794879 - GOA-configured Google account has set wrong authentication method (Milan Crha)
+	Bug 795108 - Trailing bracket not stripped when linkifying URL inside angle brackets (Milan Crha)
+	Bug 791475 - Incorrectly parses headers in certain case ]I[ (Milan Crha)
 
 Miscellaneous:
 	[ECalMetaBackend] Doesn't store custom time zones permanently (Milan Crha)
+	Add a workaround for glib bug 793727 (Milan Crha)
 	Correct typo in config.h.in (Milan Crha)
+	Make it possible to disable Reminders for Tasks (Milan Crha)
+	Change how next occurrence of a recurring task is found (Milan Crha)
+	[IMAPx] Add a code for completeness check of camel-imapx-tokens.txt (Milan Crha)
 	Update POTFILES.in (Piotr Drąg)
+	Introduce e_util_debug_print() for consistent debug print form (Milan Crha)
 
 Translations:
 	Piotr Drąg (pl)
@@ -103,7 +199,8 @@ Translations:
 	Gianvito Cavasoli (it)
 	Rūdolfs Mazurs (lv)
 	Aurimas Černius (lt)
-	Hannie Dumoleyn (nl)
+	Balázs Meskó (hu)
+	Mario Blättermann (de)
 
 Evolution-Data-Server 3.28.0 2018-03-12
 ---------------------------------------
