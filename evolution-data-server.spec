@@ -4,13 +4,12 @@
 #
 Name     : evolution-data-server
 Version  : 3.30.2
-Release  : 41
+Release  : 42
 URL      : https://download.gnome.org/sources/evolution-data-server/3.30/evolution-data-server-3.30.2.tar.xz
 Source0  : https://download.gnome.org/sources/evolution-data-server/3.30/evolution-data-server-3.30.2.tar.xz
 Summary  : The evolution data server for the calendar and addressbook
 Group    : Development/Tools
 License  : LGPL-2.0
-Requires: evolution-data-server-config = %{version}-%{release}
 Requires: evolution-data-server-data = %{version}-%{release}
 Requires: evolution-data-server-lib = %{version}-%{release}
 Requires: evolution-data-server-libexec = %{version}-%{release}
@@ -56,14 +55,6 @@ The Evolution Data Server package provides a unified backend for programs that w
 contacts, tasks, and calendar information. It was originally developed for Evolution
 (hence the name), but is now used by other packages as well.
 
-%package config
-Summary: config components for the evolution-data-server package.
-Group: Default
-
-%description config
-config components for the evolution-data-server package.
-
-
 %package data
 Summary: data components for the evolution-data-server package.
 Group: Data
@@ -97,7 +88,6 @@ lib components for the evolution-data-server package.
 %package libexec
 Summary: libexec components for the evolution-data-server package.
 Group: Default
-Requires: evolution-data-server-config = %{version}-%{release}
 Requires: evolution-data-server-license = %{version}-%{release}
 
 %description libexec
@@ -137,7 +127,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1540565145
+export SOURCE_DATE_EPOCH=1540738532
 mkdir -p clr-build
 pushd clr-build
 export AR=gcc-ar
@@ -152,7 +142,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1540565145
+export SOURCE_DATE_EPOCH=1540738532
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution-data-server
 cp COPYING %{buildroot}/usr/share/package-licenses/evolution-data-server/COPYING
@@ -160,6 +150,9 @@ pushd clr-build
 %make_install
 popd
 %find_lang evolution-data-server
+## install_append content
+mv %{buildroot}/usr/etc/xdg %{buildroot}/usr/share/xdg
+## install_append end
 
 %files
 %defattr(-,root,root,-)
@@ -169,10 +162,6 @@ popd
 /usr/lib64/evolution-data-server/camel-providers/libcamelpop3.urls
 /usr/lib64/evolution-data-server/camel-providers/libcamelsendmail.urls
 /usr/lib64/evolution-data-server/camel-providers/libcamelsmtp.urls
-
-%files config
-%defattr(-,root,root,-)
-%config /usr/etc/xdg/autostart/org.gnome.Evolution-alarm-notify.desktop
 
 %files data
 %defattr(-,root,root,-)
@@ -207,6 +196,7 @@ popd
 /usr/share/pixmaps/evolution-data-server/category_strategies_16.png
 /usr/share/pixmaps/evolution-data-server/category_suppliers_16.png
 /usr/share/pixmaps/evolution-data-server/category_time-and-expenses_16.png
+/usr/share/xdg/autostart/org.gnome.Evolution-alarm-notify.desktop
 
 %files dev
 %defattr(-,root,root,-)

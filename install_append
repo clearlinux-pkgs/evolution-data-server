@@ -1,0 +1,1 @@
+mv %{buildroot}/usr/etc/xdg %{buildroot}/usr/share/xdg
