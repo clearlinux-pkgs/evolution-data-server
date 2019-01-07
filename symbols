@@ -1466,6 +1466,7 @@ libebackend-1.2.so.10:e_cache_column_values_remove_all
 libebackend-1.2.so.10:e_cache_column_values_take
 libebackend-1.2.so.10:e_cache_column_values_take_value
 libebackend-1.2.so.10:e_cache_contains
+libebackend-1.2.so.10:e_cache_copy_missing_to_column_values
 libebackend-1.2.so.10:e_cache_dup_key
 libebackend-1.2.so.10:e_cache_dup_revision
 libebackend-1.2.so.10:e_cache_erase
@@ -1525,6 +1526,7 @@ libebackend-1.2.so.10:e_collection_backend_factory_get_type
 libebackend-1.2.so.10:e_collection_backend_factory_prepare_mail
 libebackend-1.2.so.10:e_collection_backend_get_cache_dir
 libebackend-1.2.so.10:e_collection_backend_get_type
+libebackend-1.2.so.10:e_collection_backend_is_new_source
 libebackend-1.2.so.10:e_collection_backend_list_calendar_sources
 libebackend-1.2.so.10:e_collection_backend_list_contacts_sources
 libebackend-1.2.so.10:e_collection_backend_list_mail_sources
