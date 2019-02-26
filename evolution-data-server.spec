@@ -4,10 +4,10 @@
 #
 Name     : evolution-data-server
 Version  : 3.30.5
-Release  : 45
+Release  : 46
 URL      : https://download.gnome.org/sources/evolution-data-server/3.30/evolution-data-server-3.30.5.tar.xz
 Source0  : https://download.gnome.org/sources/evolution-data-server/3.30/evolution-data-server-3.30.5.tar.xz
-Summary  : Centralized access to appointments and contacts
+Summary  : The evolution data server for the calendar and addressbook
 Group    : Development/Tools
 License  : LGPL-2.0
 Requires: evolution-data-server-data = %{version}-%{release}
@@ -50,12 +50,9 @@ BuildRequires : usrbinpython
 BuildRequires : webkitgtk-dev
 
 %description
-test1	creating, saving, loading simple messages
-test2	camelinternetaddress tests, internationalised addresses, etc.
-test4   more encompassing mime parser tests that test real-world messages.
-Note: In order to test this, though, you'll need to fetch
-http://primates.ximian.com/~fejj/camel-mime-tests.tar.gz and
-untar it into camel/tests/data/
+The Evolution Data Server package provides a unified backend for programs that work with
+contacts, tasks, and calendar information. It was originally developed for Evolution
+(hence the name), but is now used by other packages as well.
 
 %package data
 Summary: data components for the evolution-data-server package.
@@ -128,7 +125,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549289087
+export SOURCE_DATE_EPOCH=1551194461
 mkdir -p clr-build
 pushd clr-build
 export AR=gcc-ar
@@ -138,12 +135,12 @@ export CFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sect
 export FCFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
-%cmake .. -DENABLE_GOOGLE_AUTH=OFF  -DENABLE_UOA=OFF  -DENABLE_WEATHER=OFF
-make  %{?_smp_mflags}
+%cmake .. -DENABLE_GOOGLE_AUTH=OFF  -DENABLE_UOA=OFF  -DENABLE_WEATHER=OFF -DWITH_LIBDB=OFF
+make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1549289087
+export SOURCE_DATE_EPOCH=1551194461
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution-data-server
 cp COPYING %{buildroot}/usr/share/package-licenses/evolution-data-server/COPYING
@@ -335,8 +332,6 @@ mv %{buildroot}/usr/etc/xdg %{buildroot}/usr/share/xdg
 /usr/include/evolution-data-server/libebackend/e-collection-backend-factory.h
 /usr/include/evolution-data-server/libebackend/e-collection-backend.h
 /usr/include/evolution-data-server/libebackend/e-data-factory.h
-/usr/include/evolution-data-server/libebackend/e-db3-utils.h
-/usr/include/evolution-data-server/libebackend/e-dbhash.h
 /usr/include/evolution-data-server/libebackend/e-dbus-server.h
 /usr/include/evolution-data-server/libebackend/e-file-cache.h
 /usr/include/evolution-data-server/libebackend/e-oauth2-support.h
@@ -387,7 +382,6 @@ mv %{buildroot}/usr/etc/xdg %{buildroot}/usr/share/xdg
 /usr/include/evolution-data-server/libecal/e-timezone-cache.h
 /usr/include/evolution-data-server/libecal/libecal.h
 /usr/include/evolution-data-server/libedata-book/e-book-backend-cache.h
-/usr/include/evolution-data-server/libedata-book/e-book-backend-db-cache.h
 /usr/include/evolution-data-server/libedata-book/e-book-backend-factory.h
 /usr/include/evolution-data-server/libedata-book/e-book-backend-sexp.h
 /usr/include/evolution-data-server/libedata-book/e-book-backend-sqlitedb.h
