@@ -1,19 +1,110 @@
-Evolution-Data-Server 3.30.5 2019-02-04
+Evolution-Data-Server 3.32.0 2019-03-11
 ---------------------------------------
 
+Translations:
+	Daniel Mustieles (es)
+	Balázs Meskó (hu)
+	Anders Jonsson (sv)
+	Ask Hjorth Larsen (da)
+	Tim Sabsch (de)
+	Rafael Fontenelle (pt_BR)
+	Daniel Șerbănescu (ro)
+
+Evolution-Data-Server 3.31.92 2019-03-04
+----------------------------------------
+
 Bug Fixes:
+	I#68 - WebDAV registry backend Refresh can remove existing sources ][ (Milan Crha)
+	I#86 - Rejecting connection certificate causes constant connection retries (Milan Crha)
+	I#87 - [CalDAV] Free/busy request uses wrong format for the time-range (Milan Crha)
+	I#88 - Contacts with Birthday on Feb 29th Have No Appointment in Non-leap Years (Milan Crha)
+
+Miscellaneous:
+	[CalDAV] POST data to scheduling outbox with correct Content-Type (Milan Crha)
+	Change order of CFLAGS/LDFLAGS passed to gtk-doc (Milan Crha)
+	[OAuth2 Prompter] Show also current URL in the credentials prompt dialog (Milan Crha)
+	Make the OAuth2 credentials prompt window default size a bit larger (Milan Crha)
+
+Translations:
+	Rafael Fontenelle (pt_BR)
+	Changwoo Ryu (ko)
+	A S Alam (pa)
+	Kukuh Syafaat (id)
+	Марко Костић (sr)
+	Fabio Tomat (fur)
+	Piotr Drąg (pl)
+	Emin Tufan Çetin (tr)
+	Matej Urbančič (sl)
+	Nathan Follens (nl)
+	Aurimas Černius (lt)
+	Marek Cernocky (cs)
+	Fran Dieguez (gl)
+
+Evolution-Data-Server 3.31.91 2019-02-18
+----------------------------------------
+
+Bug Fixes:
+	M!9 - [Vala] Make camel_sasl_new usable in Vala (Corentin Noël)
+	M!10 - [Camel] Add more documentation and annotations to CamelMimeMessage (Corentin Noël)
+	M!11 - [EData-Book] fix several annotations (Corentin Noël)
+
+Miscellaneous:
+	[EDataBook] Enforce EBookBackend type (Corentin Noël)
+	[CamelStreamMem] Fix transfer annotations and array element type (Corentin Noël)
+	[OAuth2] Add GSettings keys to override client ID and secret (Milan Crha)
+	[Camel] Fix several annotations for message creation (Corentin Noël)
+	Hide sendmail in Flatpak (Milan Crha)
+
+Translations:
+	Daniel Mustieles (es)
+	Piotr Drąg (pl)
+	Marek Cernocky (cs)
+	Serdar Sağlam (tr)
+	Fran Dieguez (gl)
+	Aurimas Černius (lt)
+	Kukuh Syafaat (id)
+	Matej Urbančič (sl)
+	Balázs Úr (hu)
+	Alan Mortensen (da)
+	Baurzhan Muftakhidinov (kk)
+	Emin Tufan Çetin (tr)
+	Yi-Jyun Pan (zh_TW)
+
+Evolution-Data-Server 3.31.90 2019-02-04
+----------------------------------------
+
+Bug Fixes:
+	I#70 - Add camel-autocleanups header (Corentin Noël)
+	I#71 - Add e-backend-autocleanups header (Corentin Noël)
+	I#73 - Add e-dataserver-autocleanups header (Corentin Noël)
 	I#75 - Sometimes fails to properly decrypt large GPG encrypted messages (Milan Crha)
+	I#79 - [Camel] Threading view depends on message order (Milan Crha)
 	I#81 - Pops up a reminder of a deleted instance of a recurring event (Milan Crha)
 	I#82 - Use uppercase in MIME-Version 1.0 header (Milan Crha)
 
-Translations:
-	Charles Monzat (fr)
+Miscellaneous:
+	Remove some duplicated #define-s with developer documentation comments (Milan Crha)
+	De-deprecate camel_folder_info_build() (Milan Crha)
+	[libebackend] Do not define autoptr for deprecated EOfflineListener (Milan Crha)
+	[EBookBackendSExp] Skip PHOTO attribute in "Any field contains" search (Milan Crha)
+	Add also $PREFIX/share/gir-1.0 into g-ir-scanner arguments (Milan Crha)
 
-Evolution-Data-Server 3.30.4 2019-01-07
+Translations:
+	Jordi Mas (ca)
+	Charles Monzat (fr)
+	Daniel Mustieles (es)
+	Kukuh Syafaat (id)
+	Balázs Úr (hu)
+
+Evolution-Data-Server 3.31.4 2019-01-07
 ---------------------------------------
 
 Bug Fixes:
+	Bug 312581 - Optimise string manipulation in vCard parsing (Milan Crha)
+	Bug 576071 - Update developer documentation of e_book_query_{andv,orv}() (Milan Crha)
+	Bug 651234 - Update developer documentation for e_destination_get_name() (Milan Crha)
 	I#68 - WebDAV registry backend Refresh can remove existing sources (Milan Crha)
+	I#72 - [EBackend] Improve the coverage of the annotations (Corentin Noël)
 	M!7 - [CalDAV] Perform free-busy-query on the correct principal (Jamie McClymont)
 	M!8 - [CalDAV] Invert success value of schedule outbox free_busy (Jamie McClymont)
 
@@ -22,29 +113,35 @@ Miscellaneous:
 	Crash on meeting cancellation receive in local calendar (Milan Crha)
 	Fix few memory leaks in calendar backends (Milan Crha)
 
-Evolution-Data-Server 3.30.3 2018-12-10
+Translations:
+	Fabio Tomat (fur)
+
+Evolution-Data-Server 3.31.3 2018-12-10
 ---------------------------------------
 
 Bug Fixes:
+	Bug 651197 - message/rfc822 attachment encoded in base64 parsed correctly (Milan Crha)
 	Bug 719328 - [IMAPx] Fails to update folder content with QResync (Milan Crha)
-	evo-I#196 - Build developer documentation in a fix order (Milan Crha)
 	I#5 - Compare only date when searching with Sent/Received dates ][ (Milan Crha)
-	I#49 - [CardDAV] Local cache made broken after update (Milan Crha)
-	I#51 - [Gmail] Change from OAuth2 to other authentication doesn't stick (Milan Crha)
+	I#54 - Enable 'Listen for server change notifications' by default (Milan Crha)
 	I#55 - [IMAPx] Flags after certain BODYSTRUCTURE not recognized (Milan Crha)
 	I#56 - [Camel] Can stop parsing mail address header too early (Milan Crha)
+	I#61 - Cannot search contacts for existence of boolean fields (Milan Crha)
 	I#62 - Make EVCardAttribute/EVCardAttributeParam structures ref-counted internally (Milan Crha)
 	I#63 - [CalDAV/CardDAV] Incorrectly thinks an object is created in offline (Milan Crha)
 	I#64 - S/MIME: Two signerInfos (one *invalid*, one valid) are merged into a single valid indicator (Milan Crha)
+	I#65 - [Documentation] Fix several warnings with non-existing links (Corentin Noël)
+	M!6 - [Documentation] Fix references to unexisting functions or classes (Corentin Noël)
 
 Miscellaneous:
-	[IMAPx] Fix a concurrent message download issue (Milan Crha)
-	Make sure intltool-merge cache is created only once (Milan Crha)
+	Include also environment LD_LIBRARY_PATH in gtk-doc-scangobj call (Milan Crha)
 	test-cal-client-get-revision could fail due to delayed D-Bus property change notification (Milan Crha)
+	Correct how extra compiler warnings are used in the maintainer mode (Milan Crha)
 	[evolution-dbus-session] Handle method calls with GUnixFDList (Milan Crha)
 	Deadlock when marking as read message in a search folder (Milan Crha)
 	[CalDAV/CardDAV] Can add component to local cache with incomplete info (Milan Crha)
 	Copy messages within mail filters immediately (Milan Crha)
+	[test-cal-client-get-free-busy] Correct error messages (Milan Crha)
 	Correct use-after-free in e_vcard_attribute_remove_param_value() (Milan Crha)
 	Replace evolution-dbus-session tool with DBUS_SERVICES_PREFIX option (Milan Crha)
 	[Camel] Address compiler warning in header_address_list_encode_append() (Milan Crha)
@@ -52,55 +149,77 @@ Miscellaneous:
 	[Flatpak] Save passwords in libsecret with the same prefix as used by D-Bus services (Milan Crha)
 	[test-server-utils] Correct when open of deprecated book/calendar is retried (Milan Crha)
 	[test-cal-client-get-free-busy] Enhance the test execution (Milan Crha)
+	Let child source with 'none' authentication method use collection source authentication (Milan Crha)
+	[EDBus Private] Add new symbols into the developer documentation (Corentin Noël)
 	[Flatpak] Make alarm-notify use the D-Bus services prefix, if specified (Milan Crha)
 
-Translations:
-	Cédric Valmary (oc)
-	Dušan Kazik (sk)
-	Carmen Bianca BAKKER (eo)
-	Iñaki Larrañaga Murgoitio (eu)
-
-Evolution-Data-Server 3.30.2 2018-10-22
+Evolution-Data-Server 3.31.2 2018-11-12
 ---------------------------------------
 
 Bug Fixes:
+	Bug 228772 - Allow to specify a default language for a given identity (Milan Crha)
+	Bug 606071 - [Calendar] Preserve existing CREATED/LAST-MODIFIED on create (Milan Crha)
+	I#41 - Documentation doesn't go through gtkdoc-scangobj (Milan Crha)
+	I#42 - [Collection CalDAV] Populate calendar-auto-schedule for discovered sources (Milan Crha)
+	I#43 - [CalDAV] Change of calendar-auto-schedule not used immediately (Milan Crha)
+	I#44 - [CalDAV/CardDAV] Ignore Not Found error on resource delete (Milan Crha)
+	I#48 - [CalDAV] Use Location as TZID (Milan Crha)
+	I#49 - [CardDAV] Local cache made broken after update (Milan Crha)
+	I#50 - [Reminders] Ignore all errors on a reminder dismiss (Milan Crha)
+	I#51 - [Gmail] Change from OAuth2 to other authentication doesn't stick (Milan Crha)
+	I#52 - cursor-example.c includes cursor-slot.h twice (Milan Crha)
+	evo-I#113 - Make 'Mark messages as read' a folder/account option (Milan Crha)
+	evo-I#196 - Build developer documentation in a fix order (Milan Crha)
+
+Miscellaneous:
+	Use G_PARAM_EXPLICIT_NOTIFY flag to avoid false property change notifications (Milan Crha)
+	Correct e-source-camel.c to unset G_PARAM_EXPLICIT_NOTIFY (Milan Crha)
+	[CamelProvider] Do not localize empty strings in provider configuration (Milan Crha)
+	Make tests retry when factory doesn't know about added ESource yet (Milan Crha)
+	[On The Web calendar] Log also response body when requested (Milan Crha)
+	[IMAPx] Fix a concurrent message download issue (Milan Crha)
+	Suppress libxml2 warnings when parsing data with e_xml_parse_data() (Milan Crha)
+	Add translator comments into camel-sasl-anonymous.c (Milan Crha)
+	Make sure intltool-merge cache is created only once (Milan Crha)
+	Remove e-gdbus-templates from libedataserver (Milan Crha)
+
+Translations:
+	Yi-Jyun Pan (zh_TW)
+	Matej Urbančič (sl)
+	Cédric Valmary (oc)
+	Kristjan SCHMIDT (eo)
+
+Evolution-Data-Server 3.31.1 2018-10-08
+---------------------------------------
+
+Bug Fixes:
+	evo-I#86 - Quoting of plain text mail into HTML mode mangles deeper levels (Milan Crha)
+	I#3 - [GPG] Mails that are not encrypted look encrypted ][ (Milan Crha)
+	I#24 - The 'contacts' calendar backend leaks BookRecord (Milan Crha)
+	I#29 - Changed user name not propagated to collection child sources (Milan Crha)
+	I#30 - Some of the tests fail to run with disabled RPATH (Milan Crha)
+	I#31 - [ESoupSession] Preset authentication when username is filled (Milan Crha)
+	I#32 - test-cal-meta-backend cannot run without installed Evolution (Milan Crha)
+	I#34 - Remove Ubuntu Online Accounts from master (Milan Crha)
 	I#35 - [IMAPx] Ignore incomplete BODYSTRUCTURE responses (Milan Crha)
 	I#36 - Asks for password after going online, even it's stored (Milan Crha)
 	I#37 - [IMAPx] Disable request of BODYSTRUCTURE when its response is broken (Milan Crha)
 	I#38 - Archive from search folder should use original folder for transfer (Milan Crha)
 	I#40 - [IMAPx] Support RFC 6855 (IMAP Support for UTF-8) (Milan Crha)
-	I#44 - [CalDAV/CardDAV] Ignore Not Found error on resource delete (Milan Crha)
-	I#50 - [Reminders] Ignore all errors on a reminder dismiss (Milan Crha)
-
-Miscellaneous:
-	Fix a memory leak in ebmb_start_view_thread_func() (Milan Crha)
-	[evolution-dbus-session] Proxy also D-Bus subtrees (Milan Crha)
-	[CamelProvider] Do not localize empty strings in provider configuration (Milan Crha)
-	Make tests retry when factory doesn't know about added ESource yet (Milan Crha)
-	[On The Web calendar] Log also response body when requested (Milan Crha)
-
-Translations:
-	Yi-Jyun Pan (zh_TW)
-	Aurimas Černius (lt)
-
-Evolution-Data-Server 3.30.1 2018-09-24
----------------------------------------
-
-Bug Fixes:
-	I#3 - [GPG] Mails that are not encrypted look encrypted ][ (Milan Crha)
-	I#24 - The 'contacts' calendar backend leaks BookRecord (Milan Crha)
-	I#29 - Changed user name not propagated to collection child sources (Milan Crha)
-	I#30 - Some of the tests fail to run with disabled RPATH (Milan Crha)
-	I#32 - test-cal-meta-backend cannot run without installed Evolution (Milan Crha)
-	evo-I#86 - Quoting of plain text mail into HTML mode mangles deeper levels (Milan Crha)
+	M!2 - Expose GData 'parent' and 'position' task fields (Georges Basile Stavracas Neto)
 
 Miscellaneous:
 	Add an optionally built evolution-dbus-session tool (Milan Crha)
+	[NNTP] Address REVERSE_INULL Coverity scan issue (Milan Crha)
+	Address two Clang warnings (Milan Crha)
+	Mark string for a translation (Milan Crha)
+	Fix a memory leak in ebmb_start_view_thread_func() (Milan Crha)
+	[evolution-dbus-session] Proxy also D-Bus subtrees (Milan Crha)
 
 Translations:
 	Marek Cernocky (cs)
-	Rūdolfs Mazurs (lv)
 	Gábor Kelemen (hu)
+	Aurimas Černius (lt)
 
 Evolution-Data-Server 3.30.0 2018-09-03
 ---------------------------------------
