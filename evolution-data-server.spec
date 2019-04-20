@@ -4,7 +4,7 @@
 #
 Name     : evolution-data-server
 Version  : 3.32.1
-Release  : 48
+Release  : 49
 URL      : https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.1.tar.xz
 Source0  : https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.1.tar.xz
 Summary  : Centralized access to appointments and contacts
