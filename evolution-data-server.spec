@@ -4,7 +4,7 @@
 #
 Name     : evolution-data-server
 Version  : 3.32.1
-Release  : 49
+Release  : 50
 URL      : https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.1.tar.xz
 Source0  : https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.1.tar.xz
 Summary  : Centralized access to appointments and contacts
@@ -133,7 +133,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1554733706
+export SOURCE_DATE_EPOCH=1556990365
 mkdir -p clr-build
 pushd clr-build
 export AR=gcc-ar
@@ -143,12 +143,12 @@ export CFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sect
 export FCFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
-%cmake .. -DENABLE_GOOGLE_AUTH=OFF  -DENABLE_UOA=OFF  -DENABLE_WEATHER=OFF -DWITH_LIBDB=OFF
+%cmake .. -DENABLE_GOOGLE_AUTH=OFF  -DENABLE_UOA=OFF  -DENABLE_WEATHER=OFF -DWITH_LIBDB=OFF -DENABLE_INTROSPECTION=ON
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1554733706
+export SOURCE_DATE_EPOCH=1556990365
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution-data-server
 cp COPYING %{buildroot}/usr/share/package-licenses/evolution-data-server/COPYING
@@ -171,6 +171,11 @@ mv %{buildroot}/usr/etc/xdg %{buildroot}/usr/share/xdg
 
 %files data
 %defattr(-,root,root,-)
+/usr/lib64/girepository-1.0/Camel-1.2.typelib
+/usr/lib64/girepository-1.0/EBook-1.2.typelib
+/usr/lib64/girepository-1.0/EBookContacts-1.2.typelib
+/usr/lib64/girepository-1.0/EDataServer-1.2.typelib
+/usr/lib64/girepository-1.0/EDataServerUI-1.2.typelib
 /usr/share/GConf/gsettings/evolution-data-server.convert
 /usr/share/applications/org.gnome.Evolution-alarm-notify.desktop
 /usr/share/dbus-1/services/org.gnome.evolution.dataserver.AddressBook.service
@@ -178,6 +183,7 @@ mv %{buildroot}/usr/etc/xdg %{buildroot}/usr/share/xdg
 /usr/share/dbus-1/services/org.gnome.evolution.dataserver.Sources.service
 /usr/share/dbus-1/services/org.gnome.evolution.dataserver.UserPrompter.service
 /usr/share/evolution-data-server/evolutionperson.schema
+/usr/share/gir-1.0/*.gir
 /usr/share/glib-2.0/schemas/org.gnome.Evolution.DefaultSources.gschema.xml
 /usr/share/glib-2.0/schemas/org.gnome.evolution-data-server.addressbook.gschema.xml
 /usr/share/glib-2.0/schemas/org.gnome.evolution-data-server.calendar.gschema.xml
