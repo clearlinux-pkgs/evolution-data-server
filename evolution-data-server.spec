@@ -4,7 +4,7 @@
 #
 Name     : evolution-data-server
 Version  : 3.32.1
-Release  : 50
+Release  : 51
 URL      : https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.1.tar.xz
 Source0  : https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.1.tar.xz
 Summary  : Centralized access to appointments and contacts
@@ -33,6 +33,7 @@ BuildRequires : pkgconfig(gcr-base-3)
 BuildRequires : pkgconfig(gio-2.0)
 BuildRequires : pkgconfig(gio-unix-2.0)
 BuildRequires : pkgconfig(gmodule-2.0)
+BuildRequires : pkgconfig(gweather-3.0)
 BuildRequires : pkgconfig(icu-i18n)
 BuildRequires : pkgconfig(krb5)
 BuildRequires : pkgconfig(krb5-gssapi)
@@ -133,7 +134,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1556990365
+export SOURCE_DATE_EPOCH=1556991703
 mkdir -p clr-build
 pushd clr-build
 export AR=gcc-ar
@@ -143,12 +144,12 @@ export CFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sect
 export FCFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
-%cmake .. -DENABLE_GOOGLE_AUTH=OFF  -DENABLE_UOA=OFF  -DENABLE_WEATHER=OFF -DWITH_LIBDB=OFF -DENABLE_INTROSPECTION=ON
+%cmake .. -DENABLE_GOOGLE_AUTH=OFF  -DENABLE_UOA=OFF  -DENABLE_WEATHER=OFF -DWITH_LIBDB=OFF -DENABLE_INTROSPECTION=ON -DENABLE_VALA_BINDINGS=ON  -DENABLE_BACKEND_PER_PROCESS=ON -DENABLE_WEATHER=ON
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1556990365
+export SOURCE_DATE_EPOCH=1556991703
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution-data-server
 cp COPYING %{buildroot}/usr/share/package-licenses/evolution-data-server/COPYING
@@ -208,6 +209,16 @@ mv %{buildroot}/usr/etc/xdg %{buildroot}/usr/share/xdg
 /usr/share/pixmaps/evolution-data-server/category_strategies_16.png
 /usr/share/pixmaps/evolution-data-server/category_suppliers_16.png
 /usr/share/pixmaps/evolution-data-server/category_time-and-expenses_16.png
+/usr/share/vala/vapi/camel-1.2.deps
+/usr/share/vala/vapi/camel-1.2.vapi
+/usr/share/vala/vapi/libebook-1.2.deps
+/usr/share/vala/vapi/libebook-1.2.vapi
+/usr/share/vala/vapi/libebook-contacts-1.2.deps
+/usr/share/vala/vapi/libebook-contacts-1.2.vapi
+/usr/share/vala/vapi/libedataserver-1.2.deps
+/usr/share/vala/vapi/libedataserver-1.2.vapi
+/usr/share/vala/vapi/libedataserverui-1.2.deps
+/usr/share/vala/vapi/libedataserverui-1.2.vapi
 /usr/share/xdg/autostart/org.gnome.Evolution-alarm-notify.desktop
 
 %files dev
@@ -556,6 +567,7 @@ mv %{buildroot}/usr/etc/xdg %{buildroot}/usr/share/xdg
 /usr/lib64/evolution-data-server/calendar-backends/libecalbackendfile.so
 /usr/lib64/evolution-data-server/calendar-backends/libecalbackendgtasks.so
 /usr/lib64/evolution-data-server/calendar-backends/libecalbackendhttp.so
+/usr/lib64/evolution-data-server/calendar-backends/libecalbackendweather.so
 /usr/lib64/evolution-data-server/camel-providers/libcamelimapx.so
 /usr/lib64/evolution-data-server/camel-providers/libcamellocal.so
 /usr/lib64/evolution-data-server/camel-providers/libcamelnntp.so
