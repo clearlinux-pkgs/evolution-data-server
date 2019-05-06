@@ -4,7 +4,7 @@
 #
 Name     : evolution-data-server
 Version  : 3.32.2
-Release  : 53
+Release  : 54
 URL      : https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.2.tar.xz
 Source0  : https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.2.tar.xz
 Summary  : Centralized access to appointments and contacts
@@ -134,7 +134,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1557154030
+export SOURCE_DATE_EPOCH=1557158252
 mkdir -p clr-build
 pushd clr-build
 export AR=gcc-ar
@@ -149,7 +149,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1557154030
+export SOURCE_DATE_EPOCH=1557158252
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution-data-server
 cp COPYING %{buildroot}/usr/share/package-licenses/evolution-data-server/COPYING
