@@ -15,6 +15,7 @@ libgobject-2.0.so.0
 libgssapi_krb5.so.2
 libgtk-3.so.0
 libgweather-3.so.15
+libical-glib.so.3
 libical.so.3
 libicui18n.so.64
 libicuuc.so.64

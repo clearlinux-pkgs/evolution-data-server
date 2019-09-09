@@ -1,73 +1,217 @@
-Evolution-Data-Server 3.32.4 2019-07-15
+Evolution-Data-Server 3.34.0 2019-09-09
+---------------------------------------
+
+Translations:
+	Rafael Fontenelle (pt_BR)
+	Gianvito Cavasoli (it)
+	Christian Kirbach (de)
+	Sabri Ünal (tr)
+
+Evolution-Data-Server 3.33.92 2019-09-02
+----------------------------------------
+
+Bug Fixes:
+	I#136 - Meta backends: Fails to remove locally created object in online mode (Milan Crha)
+	I#141 - e_xml_parse_data: Recover from XML errors if possible (Milan Crha)
+	I#147 - CamelVeeFolder: Propagate searches into subfolders (Milan Crha)
+	I#148 - Alarm for the end of a task not working (Milan Crha)
+	evo-I#551 - Enhance URL end recognition regarding closing bracket (Milan Crha)
+
+Miscellaneous:
+	Avoid possible use after free caused in vee_folder_set_expression() (Milan Crha)
+
+Translations:
+	Daniel Mustieles (es)
+	Piotr Drąg (pl)
+	Fran Dieguez (gl)
+	Jordi Mas (ca)
+	Changwoo Ryu (ko)
+	Charles Monzat (fr)
+	Balázs Úr (hu)
+	Petr Kovář (cs)
+
+Evolution-Data-Server 3.33.91 2019-08-19
+----------------------------------------
+
+Bug Fixes:
+	I#68 - WebDAV registry backend Refresh can remove existing sources ]I[ (Milan Crha)
+	I#138 - Notify clients when backend is refreshing its content (Milan Crha)
+	I#142 - EContact: Define defaults for attributes without TYPE (Milan Crha)
+	evo-I#559 - CalDAV: Unescape URI path parts during refresh in iCloud (Milan Crha)
+	evo-I#568 - Set GtkLabel's width-chars when using line-wrap (Milan Crha)
+
+Miscellaneous:
+	Include also CFLAGS in gtkdoc-scangobj command line (Milan Crha)
+	EDataFactory: Free backend when no client connects to it (Milan Crha)
+	Correct typo in a developer comment (Milan Crha)
+	GOA module: Run EWS autodiscovery asynchronously (Milan Crha)
+	Fix two memory leaks (Milan Crha)
+
+Translations:
+	Aurimas Černius (lt)
+	Daniel Șerbănescu (ro)
+	Bruce Cowan (en_GB)
+	Jordi Mas (ca)
+	Kukuh Syafaat (id)
+	Asier Sarasua Garmendia (eu)
+	Anders Jonsson (sv)
+	Florentina Mușat (ro)
+
+Evolution-Data-Server 3.33.90 2019-08-05
+----------------------------------------
+
+Bug Fixes:
+	I#112 - Credentials prompter re-asks for credentials of disabled accounts ][ (Milan Crha)
+	I#137 - POSIX locale tests fail with ICU 64.x (Milan Crha)
+	M!27 - e-book-backend-ldap.c:func_exists() avoid strdup+free (Дилян Палаузов)
+	M!28 - Include LDFLAGS in gtkdoc-scangobj command line (Ting-Wei Lan)
+	M!29 - WebDAV: Add a way to allow any component with MKCALENDAR (Дилян Палаузов)
+	M!30 - ecal: Add camel and libedataserver to the library search path for the gir (Iain Lane)
+	M!31 - EWebDAVDiscoverContent: Select implicitly the single item (Дилян Палаузов)
+
+Miscellaneous:
+	EWebDAVDiscover can report failure on success and hide collections (Milan Crha)
+	e_webdav_discover_dialog_new: Set default response button for the dialog (Milan Crha)
+	Let the message-location check also real message location in the search folders (Milan Crha)
+
+Translations:
+	Daniel Șerbănescu (ro)
+	Rafael Fontenelle (pt_BR)
+	Asier Sarasua Garmendia (eu)
+	Jordi Mas (ca)
+
+Evolution-Data-Server 3.33.4 2019-07-15
 ---------------------------------------
 
 Bug Fixes:
-	evo-I#479 - Call mail account refresh also after going online ][ (Milan Crha)
+	I#128 - [LDAP] Claim an error when a Contact List might be saved incomplete (Milan Crha)
 	I#130 - [CamelOfflineFolder] Multiple downsync operations can run simultaneously (Milan Crha)
+	M!18 - Prefer g_string_append_c() over g_string_append() (Дилян Палаузов)
+	M!19 - e-book-backend-ldap.c:address_populate(): avoid g_strdup+g_free call (Дилян Палаузов)
+	M!20 - camel-search-sql-sexp.c:func_and() memory leak (Дилян Палаузов)
+	M!22 - Ignore the return value of g_string_append() (Дилян Палаузов)
+	M!23 - Use the return value of g_string_free(*, FALSE) (Дилян Палаузов)
+	M!24 - e-vcard.c:read_attribute_params(): Remove unneeded if() (Дилян Палаузов)
+	M!26 - Fix a possible memory leak in e_cal_client_get_component_as_string() (Дилян Палаузов)
+	evo-I#479 - Call mail account refresh also after going online ][ (Milan Crha)
 
 Miscellaneous:
+	[LDAP] Fix several memory leaks (Milan Crha)
+	Prefer built-in timezone component in e_cal_util_copy_timezone() (Milan Crha)
+	Fix a memory leak in e_cal_recur_generate_instances_sync() (Milan Crha)
 	Miscellaneous changes in ecmb_modify_object_sync() (Milan Crha)
 
-Evolution-Data-Server 3.32.3 2019-06-17
+Translations:
+	Nathan Follens (nl)
+	Daniel Mustieles (es)
+	Fabio Tomat (fur)
+	Kukuh Syafaat (id)
+
+Evolution-Data-Server 3.33.3 2019-06-17
 ---------------------------------------
 
 Bug Fixes:
 	I#108 - [IMAPx] Folder changes could be claimed in a wrong folder after APPEND (Milan Crha)
-	I#112 - Credentials prompter re-asks for credentials of disabled accounts (Milan Crha)
-	I#114 - [IMAPx] Option to enable full folder update on metered networks (Milan Crha)
-	I#116 - [IMAPx] Correct handling of mailbox names (with RFC 6855 extension) (Milan Crha)
+	I#117 - Fix clang warnings (mostly [-Wenum-conversion]) (Milan Crha)
+	I#120 - Fails to build with libasan using Clang (undefined symbols) (Milan Crha)
+	I#121 - CalDAV-advertised subscribed WebCal is not imported (Milan Crha)
 	I#123 - [SMTP] Ignore 8BITMIME extension for Yahoo! servers (Milan Crha)
-	I#190 - Does not show reminders after resume from suspend (Milan Crha)
+	M!15 - Fix typos in CMake modules (Дилян Палаузов)
+	M!17 - Use Media Type from RFC 8551 for S/MIME creation (Tom Kranz)
+	evo-I#476 - Hide "Server handles meeting invitations" for VJOURNAL/CalDAV (Milan Crha)
 	evo-I#479 - Call mail account refresh also after going online (Milan Crha)
 
 Miscellaneous:
-	[IMAPx] Fix a leak of CamelMessageInfo when downloading message from a server (Milan Crha)
 	EDataBook/EDataCal: Flush GDBus connection on backend property change (Milan Crha)
 	Add workaround for D-Bus property change into get-revision tests (Milan Crha)
 	Expose E-Book/Cal-BackendSExp lock (Milan Crha)
-	Change buffer size argument value in call of icalvalue_decode_ical_string() (Milan Crha)
 	Update overdue time immediately after the reminders' window is mapped (Milan Crha)
-	Correct test for file writable test in On This Computer backend (Milan Crha)
+	Add ESourceLocal::writable extension property (Milan Crha)
 	CamelOperation can be used by other thread while in its finalize() (Milan Crha)
+	Memos cannot have set reminders according to RFC 5545 (Milan Crha)
 	Change how CamelOfflineStore goes online (Milan Crha)
 	[IMAPx] Prefer local search in folders fully synchronized for offline (Milan Crha)
-
-Evolution-Data-Server 3.32.2 2019-05-06
----------------------------------------
-
-Bug Fixes:
-	I#89 - [IMAPx] Downloads content for offline in unsubscribed folders (Milan Crha)
-	I#99 - Fails to build against git master of OpenLDAP (vendor version check) (Дилян Палаузов)
-	I#102 - Change order of gtkdoc-scangobj libraries (Milan Crha)
-	I#105 - Invalid UTF-8 letters in a mail body get lost (Milan Crha)
-
-Miscellaneous:
-	Address several issues reported by Coverity Scan (Milan Crha)
-	[EWebDAVDiscover] Prevent crash on GError use in gio functions (Milan Crha)
+	Correct e_cal_component_get_start_plus_duration() (Milan Crha)
 
 Translations:
-	Gianvito Cavasoli (it)
+	Ih0rko (uk)
+	Balázs Meskó (hu)
+	Fabio Tomat (fur)
+	Daniel Mustieles (es)
 
-Evolution-Data-Server 3.32.1 2019-04-08
+Evolution-Data-Server 3.33.2 2019-05-20
+---------------------------------------
+
+ * The calendar part begun to use libical-glib, instead of libical, which
+   includes change from API version 1.2 to 2.0.
+
+ * The addressbook part and the calendar part changed client APIs, which
+   modified also D-Bus API, thus D-Bus services' versions had been bumped
+   as well.
+
+ * All the C libraries generate GObject introspection and Vala bindings.
+
+Bug Fixes:
+	I#33 - Port to libical-glib (Milan Crha)
+	I#89 - [IMAPx] Downloads content for offline in unsubscribed folders (Milan Crha)
+	I#105 - Invalid UTF-8 letters in a mail body get lost (Milan Crha)
+	I#106 - [IMAPx] Return cached folder list even when being online (Milan Crha)
+	I#112 - Credentials prompter re-asks for credentials of disabled accounts (Milan Crha)
+	I#114 - [IMAPx] Option to enable full folder update on metered networks (Milan Crha)
+	I#116 - [IMAPx] Correct handling of mailbox names (with RFC 6855 extension) (Milan Crha)
+	I#190 - Does not show reminders after resume from suspend (Milan Crha)
+	M!14 - Correct typo in a comment in the main CMakeLists.txt (Дилян Палаузов)
+
+Miscellaneous:
+	[EWebDAVDiscover] Prevent crash on GError use in gio functions (Milan Crha)
+	[SMTP] Log also DATA itself when SMTP logging is enabled (Milan Crha)
+	[IMAPx] Fix a leak of CamelMessageInfo when downloading message from a server (Milan Crha)
+	Change libebook and libedata-book APIs (Milan Crha)
+	Revert "Rename AddressBookView/CalendarView D-Bus members for backward compatibility" (Milan Crha)
+	Rename ECalBackendClass methods to address some gir warnings (Milan Crha)
+	Enable vala bindings for libebackend, libedata-book and libedata-cal (Milan Crha)
+	Correct get_/set_property() for EReminderWatcher::default-zone (Milan Crha)
+	Miscellaneous changes for issues overlooked during port to libical-glib (Milan Crha)
+
+Translations:
+	Daniel Mustieles (es)
+	Kukuh Syafaat (id)
+	Fabio Tomat (fur)
+	Carmen Bianca BAKKER (eo)
+	Guillaume Bernard (fr)
+
+Evolution-Data-Server 3.33.1 2019-04-22
 ---------------------------------------
 
 Bug Fixes:
 	I#91 - Verify database presence in test-migration test (Milan Crha)
 	I#92 - [IMAPx] Permanently delete single items in real Trash folder (Milan Crha)
+	I#94 - Remove -Wabi from the default C++ warning flags (Milan Crha)
 	I#95 - [WebDAV Session] Ignore empty current-user-privilege-set response (Milan Crha)
+	I#96 - Limit properties receive based on expected collection type in WebDAV discover (Milan Crha)
+	I#98 - [CardDAV] Use CARDDAV_DEBUG instead of WEBDAV_DEBUG (Milan Crha)
+	I#99 - Fails to build against git master of OpenLDAP (vendor version check) (Дилян Палаузов)
+	I#102 - Change order of gtkdoc-scangobj libraries (Milan Crha)
 	M!12 - libedataserver: Fix annoations syntax (Marco Trevisan (Treviño))
+	M!13 - [EBackend] Add GObject introspection (Corentin Noël)
+	evo-I#326 - Reword "Display reminders in notification area only" option (Milan Crha)
 	ews-I#39 - Let handle recurring task completion by the server (Milan Crha)
 
 Miscellaneous:
+	Make sure libdb addressbooks are available before book-migration test (Milan Crha)
+	Fix typo: reach-ability 🡒 reachability (Andre Klapper)
 	[Flatpak] Use a persistent location for an NSS certificate database (Milan Crha)
 	Rename AddressBookView/CalendarView D-Bus members for backward compatibility (Milan Crha)
+	Address several issues reported by Coverity Scan (Milan Crha)
 
 Translations:
 	Марко Костић (sr)
 	Matej Urbančič (sl)
+	Balázs Úr (hu)
 	Alan Mortensen (da)
 	Asier Sarasua Garmendia (eu)
 	Carmen Bianca BAKKER (eo)
+	Gianvito Cavasoli (it)
 
 Evolution-Data-Server 3.32.0 2019-03-11
 ---------------------------------------
