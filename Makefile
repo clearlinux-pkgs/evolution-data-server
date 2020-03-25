@@ -1,5 +1,5 @@
 PKG_NAME := evolution-data-server
-URL = https://download.gnome.org/sources/evolution-data-server/3.34/evolution-data-server-3.34.3.tar.xz
+URL = https://download.gnome.org/sources/evolution-data-server/3.36/evolution-data-server-3.36.0.tar.xz
 ARCHIVES = 
 
 include ../common/Makefile.common

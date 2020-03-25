@@ -1,4 +1,99 @@
-Evolution-Data-Server 3.34.3 2020-01-03
+Evolution-Data-Server 3.36.0 2020-03-06
+---------------------------------------
+
+Bug Fixes:
+	I#198 - goa: Doesn't set ESourceAuthentication::is-external properly (Milan Crha)
+
+Translations:
+	Alan Mortensen (da)
+	Nathan Follens (nl)
+	Matej Urbančič (sl)
+	Jiri Grönroos (fi)
+	Gianvito Cavasoli (it)
+	Tim Sabsch (de)
+
+Evolution-Data-Server 3.35.92 2020-02-28
+----------------------------------------
+
+Bug Fixes:
+	I#166 - Remembers last connection error for too long (Milan Crha)
+	I#167 - IMAPx: Can claim existing folders as gone (Milan Crha)
+	I#192 - Collection accounts: Do not suddenly enable disabled sub-sources (Milan Crha)
+	I#193 - EWebDAVDiscover: Can skip lookup for books with /.well-known/carddav address (Milan Crha)
+	I#194 - e-cal-recur: Incorrect timezone used for DTEND from DURATION (Milan Crha)
+
+Miscellaneous:
+	EWebDAVCollectionBackend: Require credentials only if user name is set (Milan Crha)
+	CalDAV/CardDAV: Fix 'local_error' variable usage in connect_sync() (Milan Crha)
+	CalDAV/CardDAV: Remove unused variable declaration (Milan Crha)
+	CalDAV: Claim not found objects during refresh as removed (Milan Crha)
+
+Translations:
+	Fran Dieguez (gl)
+	Piotr Drąg (pl)
+	Asier Sarasua Garmendia (eu)
+	Charles Monzat (fr)
+	Marek Černocký (cs)
+	Changwoo Ryu (ko)
+
+Evolution-Data-Server 3.35.91 2020-02-14
+----------------------------------------
+
+Bug Fixes:
+	I#168 - Camel: Can fail to connect when password contains non-ASCII letters (Milan Crha)
+	I#178 - Implement RFC 6856 - POP3 support for UTF-8 (Milan Crha)
+	I#187 - camel-sasl-gssapi: Fails to build without KRB5 (Milan Crha)
+	I#189 - Crash on malformed server response with minimal capabilities (Milan Crha)
+
+Miscellaneous:
+	Remove outdated and unused devel-docs files from camel (Milan Crha)
+	EWebDAVDiscover: Returns address books when asked for calendars only (Milan Crha)
+
+Translations:
+	Aurimas Černius (lt)
+	Daniel Mustieles (es)
+	Anders Jonsson (sv)
+	Rafael Fontenelle (pt_BR)
+	Sabri Ünal (tr)
+	Kukuh Syafaat (id)
+	Balázs Úr (hu)
+
+Evolution-Data-Server 3.35.90 2020-01-31
+----------------------------------------
+
+Bug Fixes:
+	I#154 - Replace deprecated gdk_beep() usage in the code (Milan Crha)
+	I#179 - Calendar: Handle errors in file backend's refresh thread gracefully (Milan Crha)
+	I#184 - WebDAV: Privilege with multiple child elements not handled properly (Milan Crha)
+	I#186 - Allow override of PHONENUMBER_DEFINITIONS (Milan Crha)
+	M!34 - Use G_PARAM_STATIC_STRINGS (Niels De Graef)
+	M!35 - CamelMessageContentInfo: Define CamelProviderAutoDetectFunc (Corentin Noël)
+	M!36 - EBookSqlite: Make the signal definition for before-*-contact more specific (Corentin Noël)
+	M!37 - CamelFolderSummary: Explicitely map the virtual methods to their callers (Corentin Noël)
+	evo-I#686 - Broken search folder that includes all mails from other search folders (Milan Crha)
+
+Miscellaneous:
+	EDBusServer: Delay new module load (Milan Crha)
+	alarm-notify: Double-free with certain types of the reminder (Milan Crha)
+	ESourceCollection: Add 'allow-sources-rename' property (Milan Crha)
+	camel: Document the GHashTable type in CamelProviderAutoDetectFunc and camel_provider_auto_detect (Corentin Noël)
+	Speed-up e_contact_get_attributes_set() (Milan Crha)
+	Prefer GSlice over heap allocation for short-lived structures (Milan Crha)
+	EBookSqlite: Address runtime warnings from remove_leading_zeros() in unit tests (Milan Crha)
+	CamelMessageInfo: Cache common strings in the string pool (Milan Crha)
+	ECalCache: Be more specific regarding the signal definition and fix documentation (Corentin Noël)
+	CamelHeaderParam: Specify the transfer annotation for camel_header_param (Corentin Noël)
+	Vala: Add more .metadata fixes (Corentin Noël)
+	Bump libical-glib dependency to 3.0.7 and benefit from its behavior (Milan Crha)
+
+Translations:
+	Rafael Fontenelle (pt_BR)
+	Sucipto (id)
+	Dušan Kazik (sk)
+	Anders Jonsson (sv)
+	Umarzuki Bin Mochlis Moktar (ms)
+
+Evolution-Data-Server 3.35.3 2020-01-03
 ---------------------------------------
 
 Bug Fixes:
@@ -6,12 +101,16 @@ Bug Fixes:
 
 Translations:
 	Yi-Jyun Pan (zh_TW)
+	Jordi Mas (ca)
+	Fabio Tomat (fur)
+	Fran Dieguez (gl)
 
-Evolution-Data-Server 3.34.2 2019-11-22
+Evolution-Data-Server 3.35.2 2019-11-22
 ---------------------------------------
 
 Bug Fixes:
 	I#156 - EBook/CalMetaBackend: Automatic refresh not always setup ][ (Milan Crha)
+	I#157 - IMAPx: Does not respect LOGINDISABLED (Milan Crha)
 	I#159 - LDAP: Fails to read userCertificate from the server (Milan Crha)
 	I#162 - e-cal-recur: Ignores recurrence exceptions (Milan Crha)
 	I#164 - HSTS (RFC 6797) support for "On The Web" calendars (Milan Crha)
@@ -26,13 +125,19 @@ Miscellaneous:
 	ESource: Required signals not connected after EDBusObject is replaced (Milan Crha)
 	LDAP: Change how LDAP query is constructed (Milan Crha)
 
-Evolution-Data-Server 3.34.1 2019-10-07
+Translations:
+	Daniel Mustieles (es)
+	Jordi Mas (ca)
+
+Evolution-Data-Server 3.35.1 2019-10-11
 ---------------------------------------
 
 Bug Fixes:
 	I#145 - WebDAV: Not every 403/Forbidden means wrong credentials (Milan Crha)
 	I#151 - Camel: Correct result of the "is" filter condition on address headers (Milan Crha)
 	I#156 - EBook/CalMetaBackend: Automatic refresh not always setup (Milan Crha)
+	M!32 - Replace deprecated 'g_type_class_add_private' (Pablo Barciela)
+	M!33 - ESourceAuthentication: Add is-external property (Corentin Noël)
 	evo-I#635 - LDAP: Double free when query conversion fails (Milan Crha)
 
 Miscellaneous:
