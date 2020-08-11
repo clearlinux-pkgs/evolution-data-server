@@ -1,3 +1,47 @@
+Evolution-Data-Server 3.36.5 2020-08-07
+---------------------------------------
+
+Bug Fixes:
+	I#236 - Uses LC_ADDRESS unconditionally in libphonenumber code (Milan Crha)
+	I#240 - IMAPx: Disable move to real junk/trash in server-side virtual folders (Milan Crha)
+
+Miscellaneous:
+	Fix a memory leak in ebmb_gather_photos_local_filenames() (Milan Crha)
+	ESoupSession: Provided SoupAuth might not be always used by libsoup (Milan Crha)
+
+Evolution-Data-Server 3.36.4 2020-07-03
+---------------------------------------
+
+Bug Fixes:
+	I#215 - Utilize If-None-Match header for WebCal refresh (Milan Crha)
+	I#222 - Camel: Match-All condition doesn't show any messages (Milan Crha)
+	I#226 - CVE-2020-14928: Response Injection via STARTTLS in SMTP and POP3 (Milan Crha)
+	I#228 - Restarting evolution-source-registry re-enables user-disabled CalDAV accounts (Milan Crha)
+	evo-I#982 - 'Message contains'-search broken in 3.36.3 (Milan Crha)
+
+Miscellaneous:
+	camel-folder-search: Fix a memory leak when searching message body (Milan Crha)
+	Rename camel_stream_buffer_truncate() to camel_stream_buffer_discard_cache() (Milan Crha)
+
+Translations:
+	Baurzhan Muftakhidinov (kk)
+
+Evolution-Data-Server 3.36.3 2020-05-29
+---------------------------------------
+
+Bug Fixes:
+	I#101 - DAV backends: Limit server requests after getting online (Milan Crha)
+	I#210 - Global buffer overflow in e_contact_check_attr_type_value_used() (Milan Crha)
+	I#211 - IMAPx: No IDLE after extraneous connection reset (Milan Crha)
+	I#212 - EWebDAVSession: Ignore text/plain server responses on success (Milan Crha)
+	I#213 - camel_mime_filter_backup() calls memcpy(null, ...) (Milan Crha)
+	I#219 - Search folder content rebuilt after a change in it (Milan Crha)
+	evo-I#915 - Fix some issues reported by Clang's ubsan sanitizer (Milan Crha)
+
+Miscellaneous:
+	CamelFilterDriver: do_shell: NULL-terminate the arguments array (Milan Crha)
+	ECollectionBackend: Limit how often checks for new child sources (Milan Crha)
+
 Evolution-Data-Server 3.36.2 2020-04-24
 ---------------------------------------
 
