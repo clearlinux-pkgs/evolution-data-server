@@ -1,74 +1,149 @@
-Evolution-Data-Server 3.36.5 2020-08-07
+Evolution-Data-Server 3.38.0 2020-09-11
 ---------------------------------------
+
+Translations:
+	Marek Černocký (cs)
+	Balázs Meskó (hu)
+	Anders Jonsson (sv)
+	Dušan Kazik (sk)
+	Alan Mortensen (da)
+	Mario Blättermann (de)
+	Gianvito Cavasoli (it)
+
+Evolution-Data-Server 3.37.92 2020-09-04
+----------------------------------------
+
+Bug Fixes:
+	I#172 - [IMAPx] Ignore truncated COPYUID server response (Milan Crha)
+	I#208 - Avoid race condition when refreshing collection backend (Milan Crha)
+	I#232 - ESoupSession: Ensure request URI is properly encoded (Milan Crha)
+	I#245 - CardDAV contacts without UID are not shown (Milan Crha)
+	I#246 - libecal: Specify forward-declared types for gir (Milan Crha)
+	M!43 - Calendar: Add SExp function to filter with DTSTART (Helmut Pozimski)
+	evo-I#461 - Let 'Wrap quoted text in replies' influence paragraph style (Milan Crha)
+	evo-I#1014 - Calendar: Correct RRULE's UNTIL value saving (Milan Crha)
+
+Miscellaneous:
+	GObjectIntrospection.cmake: Depend rather on gir target, than on gir file (Milan Crha)
+
+Translations:
+	Efstathios Iosifidis (el)
+	Fran Dieguez (gl)
+	Piotr Drąg (pl)
+	Thibault Martin (fr)
+	Goran Vidović (hr)
+	Rafael Fontenelle (pt_BR)
+	Nathan Follens (nl)
+	Kukuh Syafaat (id)
+	Boyuan Yang (zh_CN)
+	Changwoo Ryu (ko)
+	Asier Sarasua Garmendia (eu)
+	Zander Brown (en_GB)
+	Matej Urbančič (sl)
+
+Evolution-Data-Server 3.37.90 2020-08-07
+----------------------------------------
 
 Bug Fixes:
 	I#236 - Uses LC_ADDRESS unconditionally in libphonenumber code (Milan Crha)
+	I#239 - SMTP: Doesn't send fully qualified host name with EHLO (Milan Crha)
 	I#240 - IMAPx: Disable move to real junk/trash in server-side virtual folders (Milan Crha)
+	evo-I#1041 - Search folders can show non-matches after filter change (Milan Crha)
+	evo-I#1042 - Show recurrence information with user-specified date format (Milan Crha)
 
 Miscellaneous:
+	e-soup-logger.h: Add missing G_BEGIN_DECLS (Milan Crha)
 	Fix a memory leak in ebmb_gather_photos_local_filenames() (Milan Crha)
 	ESoupSession: Provided SoupAuth might not be always used by libsoup (Milan Crha)
 
-Evolution-Data-Server 3.36.4 2020-07-03
+Translations:
+	Baurzhan Muftakhidinov (kk)
+	Boyuan Yang (zh_CN)
+	Jordi Mas (ca)
+	Fabio Tomat (fur)
+
+Evolution-Data-Server 3.37.3 2020-07-03
 ---------------------------------------
 
 Bug Fixes:
 	I#215 - Utilize If-None-Match header for WebCal refresh (Milan Crha)
 	I#222 - Camel: Match-All condition doesn't show any messages (Milan Crha)
+	I#223 - WebDAV: Inefficient processing of returned XML data (Milan Crha)
 	I#226 - CVE-2020-14928: Response Injection via STARTTLS in SMTP and POP3 (Milan Crha)
 	I#228 - Restarting evolution-source-registry re-enables user-disabled CalDAV accounts (Milan Crha)
 	evo-I#982 - 'Message contains'-search broken in 3.36.3 (Milan Crha)
 
 Miscellaneous:
+	e-data-book-cursor.c: Mute a compiler warning (Milan Crha)
+	PrintableOptions.cmake: Sync the file with Evolution changes (Milan Crha)
 	camel-folder-search: Fix a memory leak when searching message body (Milan Crha)
-	Rename camel_stream_buffer_truncate() to camel_stream_buffer_discard_cache() (Milan Crha)
+	docs: Add api-index file references for new symbols in 3.36 and 3.38 (Milan Crha)
+	Rename camel_stream_buffer_truncate() to  camel_stream_buffer_discard_cache() (Milan Crha)
+	Use 'xmlNode *' instead of 'xmlNodePtr' in public API (vala related) (Milan Crha)
+	EWebDAVSession: Relax requirement for full path existence in propstat response (Milan Crha)
+	e_xml_get_node_text: Consider also CDATA section nodes, not only TEXT nodes (Milan Crha)
+	Enhance ESoupSession debug logging (Milan Crha)
 
 Translations:
+	Emin Tufan Çetin (tr)
+	Yuri Chornoivan (uk)
+	Florentina Mușat (ro)
 	Baurzhan Muftakhidinov (kk)
+	Aurimas Černius (lt)
+	Daniel Mustieles (es)
 
-Evolution-Data-Server 3.36.3 2020-05-29
+Evolution-Data-Server 3.37.2 2020-05-29
 ---------------------------------------
 
 Bug Fixes:
 	I#101 - DAV backends: Limit server requests after getting online (Milan Crha)
+	I#209 - libedataserverui: Remove unneeded dependency on libebackend (Milan Crha)
 	I#210 - Global buffer overflow in e_contact_check_attr_type_value_used() (Milan Crha)
 	I#211 - IMAPx: No IDLE after extraneous connection reset (Milan Crha)
 	I#212 - EWebDAVSession: Ignore text/plain server responses on success (Milan Crha)
 	I#213 - camel_mime_filter_backup() calls memcpy(null, ...) (Milan Crha)
 	I#219 - Search folder content rebuilt after a change in it (Milan Crha)
+	M!40 - Add the the enumeration of possible values for ENABLE_FILE_LOCKING (Дилян Палаузов)
 	evo-I#915 - Fix some issues reported by Clang's ubsan sanitizer (Milan Crha)
 
 Miscellaneous:
+	ECredentialsPrompterImplOAuth2: Enable sandbox usage for WebKitGTK (Milan Crha)
 	CamelFilterDriver: do_shell: NULL-terminate the arguments array (Milan Crha)
+	SetupBuildFlags.cmake: Use -Werror=implicit-function-declaration only for C code compilation (Milan Crha)
 	ECollectionBackend: Limit how often checks for new child sources (Milan Crha)
-
-Evolution-Data-Server 3.36.2 2020-04-24
----------------------------------------
-
-Bug Fixes:
-	I#203 - Google book: Do not use progress callbacks in libgdata sync API (Milan Crha)
-	I#204 - GOA-configured Nextcloud account not appearing (Milan Crha)
-	I#206 - LDAP: Incorrectly converts SExp to LDAP query (Milan Crha)
-
-Miscellaneous:
-	ESourceRegistryWatcher: The 'filter' signal listener should not be required (Milan Crha)
+	WebDAV backends: Transform Precondition Failed error to E_CLIENT_ERROR_OUT_OF_SYNC (Milan Crha)
 
 Translations:
-	Goran Vidović (hr)
-	Fabio Tomat (fur)
+	Daniel Mustieles (es)
+	Emin Tufan Çetin (tr)
+	Florentina Mușat (ro)
 
-Evolution-Data-Server 3.36.1 2020-03-27
+Evolution-Data-Server 3.37.1 2020-04-24
 ---------------------------------------
 
 Bug Fixes:
+	I#165 - Add backend to access Nextcloud Notes (Milan Crha)
+	I#195 - alarm-notify: Show more details of the selected event (Milan Crha)
 	I#199 - ESoupAuthBearer: Is not thread safe (Milan Crha)
+	I#203 - Google book: Do not use progress callbacks in libgdata sync API (Milan Crha)
+	I#204 - GOA-configured Nextcloud account not appearing (Milan Crha)
+	I#205 - e-source-selectable: Add annotations to developer comments (Milan Crha)
+	I#206 - LDAP: Incorrectly converts SExp to LDAP query (Milan Crha)
 	evo-I#831 - Free/Busy times are not in UTC (Milan Crha)
 	ews-I#87 - Meta backends not moved back online after connect failure (Milan Crha)
 
+Miscellaneous:
+	Name D-Bus .service files by D-Bus service names they provide (Milan Crha)
+	ESourceRegistryWatcher: The 'filter' signal listener should not be required (Milan Crha)
+
 Translations:
+	Marek Černocký (cs)
+	Rafael Fontenelle (pt_BR)
+	Gianvito Cavasoli (it)
 	Goran Vidović (hr)
 	Daniel Korostil (uk)
 	Daniel Șerbănescu (ro)
+	Fabio Tomat (fur)
 
 Evolution-Data-Server 3.36.0 2020-03-06
 ---------------------------------------
