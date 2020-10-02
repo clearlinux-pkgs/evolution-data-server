@@ -2458,6 +2458,7 @@ libecal-2.0.so.1:e_cal_util_get_system_timezone_location
 libecal-2.0.so.1:e_cal_util_icaltime_to_tm
 libecal-2.0.so.1:e_cal_util_icaltime_to_tm_with_zone
 libecal-2.0.so.1:e_cal_util_init_recur_task_sync
+libecal-2.0.so.1:e_cal_util_inline_local_attachments_sync
 libecal-2.0.so.1:e_cal_util_is_first_instance
 libecal-2.0.so.1:e_cal_util_mark_task_complete_sync
 libecal-2.0.so.1:e_cal_util_new_component
