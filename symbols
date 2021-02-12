@@ -1354,6 +1354,8 @@ libcamel-1.2.so.62:camel_util_bdata_get_number
 libcamel-1.2.so.62:camel_util_bdata_get_string
 libcamel-1.2.so.62:camel_util_bdata_put_number
 libcamel-1.2.so.62:camel_util_bdata_put_string
+libcamel-1.2.so.62:camel_utils_weak_ref_free
+libcamel-1.2.so.62:camel_utils_weak_ref_new
 libcamel-1.2.so.62:camel_uudecode_step
 libcamel-1.2.so.62:camel_uuencode_close
 libcamel-1.2.so.62:camel_uuencode_step
