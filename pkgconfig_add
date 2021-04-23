@@ -1,7 +1,7 @@
 # This file contains additional pkgconfig build requirements that did
 # not get picked up automatically. One name per line, no whitespace.
-libsoup-2.4
-libical
-libgdata
-krb5
 gweather-3.0
+krb5
+libgdata
+libical
+libsoup-2.4

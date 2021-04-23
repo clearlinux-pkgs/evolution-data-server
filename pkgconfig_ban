@@ -1,13 +1,13 @@
 # This file contains pkgconfig build requirements that get picked up
 # but are undesirable. One entry per line, no whitespace.
-gio-windows-2.0
-webkitgtk-3.0
-libaccounts-glib
-libsignon-glib
 ${mozilla_nspr}
 ${mozilla_nss}
 _module0
 gcr-base-3>=${gcr_minimum_version}
+gio-windows-2.0
+libaccounts-glib
 libical>=${libical_minimum_version}
 libsecret-unstable>=${libsecret_minimum_version}
+libsignon-glib
 sqlite3>=${sqlite_minimum_version}
+webkitgtk-3.0

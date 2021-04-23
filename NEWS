@@ -1,81 +1,190 @@
-Evolution-Data-Server 3.38.4 2021-02-12
+Evolution-Data-Server 3.40.0 2021-03-19
+---------------------------------------
+
+Translations:
+	Boyuan Yang (zh_CN)
+	Milo Casagrande (it)
+
+Evolution-Data-Server 3.39.3 2021-03-12
 ---------------------------------------
 
 Bug Fixes:
+	I#301 - alarm-notify: Add "until start time" as predefined snooze time (Milan Crha)
+	I#303 - camel-folder: Add nullable and optional annotations to out parameters. (Corentin Noël)
+	I#304 - IMAPx: Inbox hidden in offline when not subscribed (Milan Crha)
+	I#309 - EContact: Inline locally stored image does not retain its mime type (Milan Crha)
+	ews-I#144 - Calendar: Dismiss of a reminder doesn't provide recurrence ID (Milan Crha)
+
+Miscellaneous:
+	ESoupAuthBearer: Shorten the token expiry time by 4 more seconds (Milan Crha)
+	ESoupSession: Refresh Bearer auth token during request redirect (Milan Crha)
+	MetaBackend tests: Relax a runtime requirement (Milan Crha)
+	Calendar: Add functions to clamp a VTIMEZONE component (Milan Crha)
+	e_cal_client_get_component_as_string: Clamp the VTIMEZONE component (Milan Crha)
+	test-cal-utils: Add test to clamp a VTIMEZONE by a future time (Milan Crha)
+	Calendar: Make few improvements in the Weather backend (Milan Crha)
+	camel-debug: Copy cached backtrace symbol strings (Milan Crha)
+	camel-gpg-context: Add some debug prints (Milan Crha)
+	[IMAPx] Cancel authentication request when failed to get the SASL response (Milan Crha)
+	EBookMetaBackend: Add 'backend_module_directory' property into the class (Milan Crha)
+	Allow to load modules from custom prefixes (Milan Crha)
+	reminder-watcher: Process "Dismiss All" requests in the background (Milan Crha)
+	Allocate large-enough buffer for g_base64_decode_step() (Milan Crha)
+	CamelSpoolStore: Use cache for often accessed data (Milan Crha)
+	alarm-notify: Default notify-past-events to false plus few related fixes (Milan Crha)
+	e-book-backend-file: Fix busy loop when modifying multiple contacts at once (Milan Crha)
+	Use SHA256 instead of SHA1 where appropriate (Milan Crha)
+	Fix integer overflow on 32-bit architectures (Milan Crha)
+	Fix a memory leak in camel_util_get_directory_variants() (Milan Crha)
+
+Translations:
+	Charles Monzat (fr)
+	Ask Hjorth Larsen (da)
+	Yuri Chornoivan (uk)
+	Asier Sarasua Garmendia (eu)
+	Fran Dieguez (gl)
+	Kukuh Syafaat (id)
+	Hugo Carvalho (pt)
+	Мирослав Николић (sr)
+	Emin Tufan Çetin (tr)
+	Jiri Grönroos (fi)
+	Matej Urbančič (sl)
+	Balázs Úr (hu)
+	Philipp Kiemle (de)
+	Goran Vidović (hr)
+	Henrique Machado Campos (pt_BR)
+	Aurimas Černius (lt)
+	Anders Jonsson (sv)
+	Jordi Mas (ca)
+	Piotr Drąg (pl)
+	Rūdolfs Mazurs (lv)
+	Daniel Mustieles (es)
+	Daniel Șerbănescu (ro)
+	Marek Černocký (cs)
+	Guillaume Bernard (fr)
+	Changwoo Ryu (ko)
+
+Evolution-Data-Server 3.39.2 2021-02-12
+---------------------------------------
+
+Bug Fixes:
+	I#196 - Use default OAuth2 services on scratch sources (Milan Crha)
+	I#283 - CamelNetworkSettings: Unset default value for the 'user' property (Milan Crha)
+	I#288 - Adapt to libgweather 40.alpha API changes (Milan Crha)
 	I#293 - IMAPx: Ignore unexpected untagged LIST/LSUB responses (Milan Crha)
+	I#295 - Calendar: Use ACKNOWLEDGED VALARM property (Milan Crha)
 	I#296 - CamelMime*: Annotate the data arrays with element-type uint8 (Corentin Noël)
+	I#297 - CalDAV: Support calendar-order property (Milan Crha)
 	I#298 - Flatpak: Share NSS database with the system (Milan Crha)
 	I#299 - e_xml_is_element_name: Can fail to match a namespaced node (Milan Crha)
 	I#300 - Camel: Conversion between UTF-8 and UTF-7 misbehaves for emoji (Milan Crha)
+	M!49 - vala: Make webdav_discover_sources E.Source methods ][ (Corentin Noël)
+	M!64 - Fix variable reference in e_source_mail_identity_set_signature_uid docs (Michael McClurg)
+	M!65 - Correct typos in a/an (Дилян Палаузов)
 
 Miscellaneous:
+	camel-debug: Cache symbol resolution to speed up backtrace demangle (Milan Crha)
+	Fix variable type to calls of g_once_init_enter() (Milan Crha)
+	Fix some compiler warnings (Milan Crha)
 	alarm-notify: Stop using g_application_register() (Milan Crha)
+	Remove OnlyShowIn from org.gnome.Evolution-alarm-notify.desktop (Milan Crha)
+	alarm-notify: Guard new glib symbol usage by a version check (Milan Crha)
 	alarm-notify: The XDG_CURRENT_DESKTOP env is a list (Sebastien Bacher)
 	CamelFolder: Cancel save of the changes early in the dispose() (Milan Crha)
 	AlarmNotify: The e_alarm_notify_activate() can be called multiple times (Milan Crha)
+	Correct few typos in the developer comments (Milan Crha)
 
 Translations:
+	Daniel Mustieles (es)
+	Marek Černocký (cs)
+	Balázs Meskó (hu)
+	Fabio Tomat (fur)
 	Мирослав Николић (sr)
+	Fran Dieguez (gl)
+	Matej Urbančič (sl)
+	Rafael Fontenelle (pt_BR)
+	Marek Černocký (cs)
+	Kukuh Syafaat (id)
+	Emin Tufan Çetin (tr)
+	Luna Jernberg (sv)
 
-Evolution-Data-Server 3.38.3 2021-01-08
+Evolution-Data-Server 3.39.1 2021-01-08
 ---------------------------------------
 
 Bug Fixes:
+	I#81 - EReminderWatcher: Triggers an alarm for a removed object (Milan Crha)
+	I#247 - Trust Prompt: Can fail to extract host from a collection account (Milan Crha)
+	I#249 - EBufferTagger: Add link-related options into the context menu (Milan Crha)
+	I#254 - Calendar: Add 'has-end?', 'has-due?' and 'has-duration?' into SExp (Milan Crha)
+	I#257 - Ineffective refresh of book/calendar meta backends (Milan Crha)
+	I#260 - DAV: Relax collection's item href comparison (Milan Crha)
+	I#265 - code-cleanup: Remove unnecessary NULL pointer checks (Markus Elfring)
+	I#269 - EWebDAVSession: Traverse all 'propstat' nodes in the response (Milan Crha)
+	I#271 - Maildir: Allow not to have colons in data filenames (Milan Crha)
+	I#272 - WebDAV: Decode URI-s before comparing them (Milan Crha)
+	I#273 - Camel: Save folder changes periodically (Milan Crha)
+	I#275 - SMTP: Add option to override HELO/EHLO address (Milan Crha)
 	I#277 - Reminders: Preselect a reminder in the notification window (Milan Crha)
+	I#281 - GLibTools.cmake: Use basename in glib-mkenums templates (Milan Crha)
+	I#282 - tests: Avoid build/source directories in executables (Milan Crha)
 	I#286 - Skip collection account refresh when parts disabled (Milan Crha)
+	M!42 - Change summary of 'notify-window-paned-position' gschema key (Thibault Martin)
+	M!44 - Typo 'the the ' -> 'the ' (Дилян Палаузов)
+	M!45 - e-cal-client: Make the documentation point to enum definition of E_CAL_OBJ_MOD_* (Corentin Noël)
+	M!46 - camel-internet-address: Annotate methods to fetch strings as transfer none (Corentin Noël)
+	M!47 - e-webdav-session: Fixed wrong annotation (Marco Betschart)
+	M!48 - e-webdav-discover: Define EWebDAVDiscoveredSource as boxed type (Corentin Noël)
+	M!49 - vala: Make webdav_discover_sources E.Source methods (Corentin Noël)
+	M!50 - Added style class to alarm notification window (ptrxyz)
+	M!51 - EWebDAVDiscover*: Make the WebDAV discover Dialog and Content real widgets (Corentin Noël)
+	M!52 - Replace several G_TYPE_POINTER to their actual type in signal declaration (Corentin Noël)
+	M!53 - calendar: Mention ECalOperationFlags directly instead of using guint32 (Corentin Noël)
+	M!54 - Remove unneeded assignments in nntp_get_existing_article_numbers() (Markus Elfring)
+	M!55 - Add pointer checks for SQL statement arguments (Markus Elfring)
+	M!57 - libedataserver: Add explicit GData dependency for the introspection when enabled (Corentin Noël)
+	M!61 - Camel: Add several headers to provide GType for error domains (Corentin Noël)
+	M!62 - GObjectIntrospection.cmake: Specify the `sources-top-dirs` (Corentin Noël)
+	evo-I#1070 - Improve URL scanner (detect angle brackets) (Milan Crha)
+	evo-I#1090 - Forward as iCalendar: Embed event's local attachments (Milan Crha)
+	evo-I#1095 - Password Credentials Prompt: Escape text for use in markup (Milan Crha)
+	evo-i#1206 - Mail: Preserve TABs in plain text body preview (Milan Crha)
 
 Miscellaneous:
+	Mark a missed user-visible text for translation (Milan Crha)
+	Calendar: Fix a possible leak in e_cal_util_parse_ics_string() (Milan Crha)
+	ReminderWatcher: Add detailed debug prints about the scheduled reminders (Milan Crha)
+	EReminderWatcher: Default alarm range should be from the day begin (Milan Crha)
+	Camel: Special-case search for the match of the MESSAGE-ID headers (Milan Crha)
+	Calendar: Make it possible to assign email address to On This Computer sources (Milan Crha)
+	Introduce e_async_closure_new_with_context() (Milan Crha)
+	Bump gtk+ requirement to 3.16, due to used functions from that version (Milan Crha)
+	EBufferTagger: Derive link color from the theme (Milan Crha)
+	EBook/CalBackend: Correct free function for the pending_operations queue (Milan Crha)
 	e-categories: Show migration runtime warning only if the file exists (Milan Crha)
 	DataCalView: Created objects could be notified twice (Milan Crha)
-	EReminderWatcher: Add detailed debug prints about the scheduled reminders (Milan Crha)
+	CalComponentParameterBag: The take method gives the ownership of the object (Corentin Noël)
+	CalComponentPropertyBag: The take method gives the ownership of the object (Corentin Noël)
+	GLibTools.cmake: Generate signal marshallers without source reference (Milan Crha)
+	Vala: Mark the message field of CamelFolderThreadNode as nullable (Corentin Noël)
 	EReminderWatcher: Catch a race condition when creating a calendar view (Milan Crha)
 	alarm-notify: Provide application reference in canberra calls (Milan Crha)
 	CamelMimeFilterToHTML: Change how empty <div> is recognized (Milan Crha)
 	Addressbook:file backend: Prevent percent letter in photo filename (Milan Crha)
 
 Translations:
-	Juliano de Souza Camargo (pt)
-	Hugo Carvalho (pt)
-	Jordi Mas (ca)
-
-Evolution-Data-Server 3.38.2 2020-11-20
----------------------------------------
-
-Bug Fixes:
-	I#81 - EReminderWatcher: Triggers an alarm for a removed object (Milan Crha)
-	I#257 - Ineffective refresh of book/calendar meta backends (Milan Crha)
-	I#260 - DAV: Relax collection's item href comparison (Milan Crha)
-	I#269 - EWebDAVSession: Traverse all 'propstat' nodes in the response (Milan Crha)
-	I#272 - WebDAV: Decode URI-s before comparing them (Milan Crha)
-	I#273 - Camel: Save folder changes periodically (Milan Crha)
-	M!46 - camel-internet-address: Annotate methods to fetch strings as transfer none (Corentin Noël)
-	M!47 - e-webdav-session: Fixed wrong annotation (Marco Betschart)
-	M!50 - Added style class to alarm notification window (ptrxyz)
-	evo-i#1206 - Mail: Preserve TABs in plain text body preview (Milan Crha)
-
-Miscellaneous:
-	Calendar: Fix a possible leak in e_cal_util_parse_ics_string() (Milan Crha)
-	ECalCache: Avoid runtime warning from ecc_update_timezones_table() (Milan Crha)
-	EReminderWatcher: Default alarm range should be from the day begin (Milan Crha)
-	EBufferTagger: Derive link color from the theme (Milan Crha)
-	EBook/CalBackend: Correct free function for the pending_operations queue (Milan Crha)
-
-Translations:
-	Dušan Kazik (sk)
-
-Evolution-Data-Server 3.38.1 2020-10-02
----------------------------------------
-
-Bug Fixes:
-	I#247 - Trust Prompt: Can fail to extract host from a collection account (Milan Crha)
-	evo-I#1070 - Improve URL scanner (detect angle brackets) (Milan Crha)
-	evo-I#1090 - Forward as iCalendar: Embed event's local attachments (Milan Crha)
-	evo-I#1095 - Password Credentials Prompt: Escape text for use in markup (Milan Crha)
-
-Translations:
+	Fabio Tomat (fur)
+	Yuri Chornoivan (uk)
+	Balázs Úr (hu)
 	Jordi Mas (ca)
 	Rūdolfs Mazurs (lv)
 	Yosef Or Boczko (he)
+	Dušan Kazik (sk)
+	Juliano de Souza Camargo (pt)
+	Florentina Mușat (ro)
+	Hugo Carvalho (pt)
+	Jordi Mas i Hernandez (ca)
+	Philipp Kiemle (de)
+	Aurimas Černius (lt)
 
 Evolution-Data-Server 3.38.0 2020-09-11
 ---------------------------------------

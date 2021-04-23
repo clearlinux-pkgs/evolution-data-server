@@ -1,16 +1,16 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
-libxml2-dev
 db-dev
-nss-dev
+e2fsprogs-dev
 gobject-introspection-dev
 gperf
-usrbinpython
-python3
 intltool
-openldap-dev
-libsecret-dev
-sqlite-autoconf-dev
-e2fsprogs-dev
 liboauth-dev
+libsecret-dev
+libxml2-dev
+nss-dev
+openldap-dev
+python3
+sqlite-autoconf-dev
+usrbinpython
 webkitgtk-dev
