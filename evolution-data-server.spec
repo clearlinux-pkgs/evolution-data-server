@@ -4,7 +4,7 @@
 #
 Name     : evolution-data-server
 Version  : 3.40.0
-Release  : 76
+Release  : 77
 URL      : https://download.gnome.org/sources/evolution-data-server/3.40/evolution-data-server-3.40.0.tar.xz
 Source0  : https://download.gnome.org/sources/evolution-data-server/3.40/evolution-data-server-3.40.0.tar.xz
 Summary  : The evolution data server for the calendar and addressbook
@@ -138,10 +138,10 @@ export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition -fstack-protector-strong -mzero-caller-saved-regs=used "
-export FCFLAGS="$FFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition -fstack-protector-strong -mzero-caller-saved-regs=used "
-export FFLAGS="$FFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition -fstack-protector-strong -mzero-caller-saved-regs=used "
-export CXXFLAGS="$CXXFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition -fstack-protector-strong -mzero-caller-saved-regs=used "
+export CFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used "
+export FCFLAGS="$FFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used "
+export FFLAGS="$FFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used "
+export CXXFLAGS="$CXXFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used "
 %cmake .. -DENABLE_GOOGLE_AUTH=OFF \
 -DENABLE_UOA=OFF \
 -DENABLE_WEATHER=OFF \
