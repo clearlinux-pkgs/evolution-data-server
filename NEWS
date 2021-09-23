@@ -1,74 +1,102 @@
-Evolution-Data-Server 3.40.4 2021-08-13
+Evolution-Data-Server 3.42.0 2021-09-17
+---------------------------------------
+
+Translations:
+	Alan Mortensen (da)
+	Balázs Úr (hu)
+	Boyuan Yang (zh_CN)
+	Changwoo Ryu (ko)
+	Charles Monzat (fr)
+	Daniel Șerbănescu (ro)
+	Goran Vidović (hr)
+	Luna Jernberg (sv)
+	Nathan Follens (nl)
+	Philipp Kiemle (de)
+	Piotr Drąg (pl)
+	Zander Brown (en_GB)
+
+Evolution-Data-Server 3.41.3 2021-09-03
 ---------------------------------------
 
 Bug Fixes:
+	I#343 - Slow down automatic background downloads when in power saver mode (Milan Crha)
+	I#349 - ERemindersWidget: Reverse order of the shown reminders (Milan Crha)
+
+Miscellaneous:
+	vala: FolderThreadNode is a compact class (Corentin Noël)
+
+Translations:
+	Daniel Mustieles (es)
+	Asier Sarasua Garmendia (eu)
+	Fran Dieguez (gl)
+	Kukuh Syafaat (id)
+	Baurzhan Muftakhidinov (kk)
+	Jiri Grönroos (fi)
+	Jordi Mas (ca)
+	Nathan Follens (nl)
+	Aurimas Černius (lt)
+
+Evolution-Data-Server 3.41.2 2021-08-13
+---------------------------------------
+
+Bug Fixes:
+	I#341 - Pass Proxy settings to WebKit in OAuth2 credentials prompter (Milan Crha)
 	I#346 - Camel: "Pipe to program" filter does not work (Milan Crha)
+	M!72 - Typos its <=> it's (Дилян Палаузов)
+	M!73 - Add more GType for many Camel Flags (Corentin Noël)
 	M!74 - LDAP: Don't force LDAPS port to 636 (Christoph Ruegge)
+	evo-I#1433 - Message List columns for custom headers (Milan Crha)
 
 Miscellaneous:
 	CamelMimeFilterToHTML: Speed up read of long lines (Milan Crha)
 	CamelMimeFilterToHTML: Correct filtering of text without new line at the end (Milan Crha)
 	alarm-notify: Focus window on status icon click when shown (Milan Crha)
+	vala: Add support for the auth_type class field of CamelSasl (Corentin Noël)
+	vala: Properly annotate CamelServiceAuthType (Corentin Noël)
 	ESoupSession: Let it understand GSSAPI authentication method (Milan Crha)
 
 Translations:
-	Marek Černocký (cs)
-	Quentin PAGÈS (oc)
-
-Evolution-Data-Server 3.40.3 2021-07-09
----------------------------------------
-
-Bug Fixes:
-	I#336 - Handle "Object is out of sync" during backend refresh better (Milan Crha)
-
-Miscellaneous:
-	tests: Workaround libphonenumber behavior change (Milan Crha)
-	test-book-client-write-write: Fix occasional test failure (Milan Crha)
-	IMAPx: Change how Junk and NotJunk flags are handled (Milan Crha)
-	ECalBackendFile: Free interval tree only when being allocated (Milan Crha)
-
-Evolution-Data-Server 3.40.2 2021-06-04
----------------------------------------
-
-Bug Fixes:
-	I#334 - ECredentialsPrompter: Truncate multiline for pasted passwords (Milan Crha)
-	I#335 - CamelFolder: Calls Junk/Not-Junk learn repeatedly (Milan Crha)
-
-Miscellaneous:
-	ECollectionBackend: Fix a memory leak (Milan Crha)
-	gnome_online_accounts_create_client_cb: Prefer g_clear_object() (Milan Crha)
-	Data Factories: Miscellaneous fixes (Milan Crha)
-	ECalCache: Drop timezones_lock (Milan Crha)
-	ECalBackend: Deliver component change notifications in a dedicated thread (Milan Crha)
-	CardDAV: Recognize OPTIONS 'Bad Request' response as success for Google (Milan Crha)
-	Fix e_webdav_session_util_item_href_equal() (Milan Crha)
-
-Translations:
-	Мирослав Николић (sr)
-	Kjartan Maraas (nb)
+	Chao-Hsiung Liao (zh_TW)
+	Rafael Fontenelle (pt_BR)
+	Philipp Kiemle (de)
 	Fabio Tomat (fur)
-	Fran Dieguez (gl)
-	Zander Brown (en_GB)
-	Gianvito Cavasoli (it)
+	Hugo Carvalho (pt)
+	Yuri Chornoivan (uk)
+	Alexey Rubtsov (ru)
+	Enrico Nicoletto (pt_BR)
+	Marek Černocký (cs)
+	Emin Tufan Çetin (tr)
+	Quentin PAGÈS (oc)
+	Matej Urbančič (sl)
 
-Evolution-Data-Server 3.40.1 2021-04-30
+Evolution-Data-Server 3.41.1 2021-07-09
 ---------------------------------------
 
 Bug Fixes:
+	I#289 - Support Matrix IM Protocol for Contacts (Milan Crha)
+	I#306 - Camel: Listen for change notifications on spool account (Milan Crha)
 	I#313 - EXmlDocument: Export unformatted text, to save bandwidth (Milan Crha)
 	I#315 - EWebDAVDiscover: Correct error response (Milan Crha)
 	I#316 - vCard: PHOTO/LOGO is a single value attribute (Milan Crha)
 	I#317 - Add OAuth2 for Yahoo! accounts (Milan Crha)
+	I#319 - SMTP: Extra empty line added at the end of the message (Milan Crha)
 	I#323 - Camel: Consider plain words as message ids in In-Reply-To/References headers (Milan Crha)
 	I#326 - libecal: Move Due date relative to the Start date on a recurring task completion (Milan Crha)
 	I#328 - IMAPx: LIST-STATUS is not an extension of the LIST-EXTENDED (Milan Crha)
 	I#329 - Calendar: Add SIMPLE_MEMO_WITH_SUMMARY capability (Milan Crha)
+	I#334 - ECredentialsPrompter: Truncate multiline for pasted passwords (Milan Crha)
+	I#335 - CamelFolder: Calls Junk/Not-Junk learn repeatedly (Milan Crha)
+	I#336 - Handle "Object is out of sync" during backend refresh better (Milan Crha)
 	M!68 - SetupBuildFlags.cmake: Correct testing of two compiler/linker build flags (Matt Turner)
+	M!71 - CamelFolderThread: Use g_clear_object/pointer when possible (Corentin Noël)
 	evo-I#571 - IMAPx QResync: Folder doesn't show all messages actually in it (Milan Crha)
+	evo-I#1499 - ECredentialsPrompter: Ask for dialog parent with the auth_source (Milan Crha)
+	evo-I#1512 - Choose account with which to forward message in filter rule (Milan Crha)
 
 Miscellaneous:
 	EWebDAVCollectionBackend: Preset also auth method on the new child (Milan Crha)
 	Camel: Fails to filter unread junk messages in a virtual Junk folder (Milan Crha)
+	Add Yahoo! OAuth2 service objects into the developer documentation (Milan Crha)
 	ESourceWebDAV: Fallback to SHA1 on SSL trust verification if needed (Milan Crha)
 	tests: Change how timezone is verified in CalMetaBackend test (Milan Crha)
 	Ensure non-const pointers passed to I_CAL_IS_... functions (Milan Crha)
@@ -76,26 +104,49 @@ Miscellaneous:
 	ECalBackendSync: Ensure no Recurrence-ID set when removing all components (Milan Crha)
 	PrintableOptions.cmake: Correct variable name comparison (Milan Crha)
 	libecal: Fix a warning caught by a gcc static analyzer (Milan Crha)
+	ECollectionBackend: Fix a memory leak (Milan Crha)
+	gnome_online_accounts_create_client_cb: Prefer g_clear_object() (Milan Crha)
+	Data Factories: Miscellaneous fixes (Milan Crha)
+	ECalCache: Drop timezones_lock (Milan Crha)
+	ECalBackend: Deliver component change notifications in a dedicated thread (Milan Crha)
+	CardDAV: Recognize OPTIONS 'Bad Request' response as success for Google (Milan Crha)
+	Fix e_webdav_session_util_item_href_equal() (Milan Crha)
+	Addressbook: Switch from GData Contacts API to CardDAV API for Google books (Milan Crha)
+	Camel: Stop using allow-none annotation (Corentin Noël)
+	Introspection: Get rid of allow-none (Corentin Noël)
+	CamelMimeFilterEnriched: Add safety checks into enriched_to_html() (Milan Crha)
+	Calendar: Support THIS_AND_FUTURE range for the Recurrence-ID (Milan Crha)
+	Calendar: Improve the annotation coverage (Corentin Noël)
+	tests: Workaround libphonenumber behavior change (Milan Crha)
+	test-book-client-write-write: Fix occasional test failure (Milan Crha)
+	IMAPx: Change how Junk and NotJunk flags are handled (Milan Crha)
+	ECalBackendFile: Free interval tree only when being allocated (Milan Crha)
+	Calendar: Drop leftover GDataClientLogin reference in the gtasks backend (Milan Crha)
 
 Translations:
-	Bruce Cowan (en_GB)
-	Gianvito Cavasoli (it)
-	Nathan Follens (nl)
-	Chao-Hsiung Liao (zh_TW)
-	Yuri Chornoivan (uk)
-	Matej Urbančič (sl)
-	Hugo Carvalho (pt)
-	Enrico Nicoletto (pt_BR)
-	Daniel Șerbănescu (ro)
+	Alexey Rubtsov (ru)
 	Asier Sarasua Garmendia (eu)
 	Aurimas Černius (lt)
-	Piotr Drąg (pl)
-	Daniel Mustieles (es)
-	Tim Sabsch (de)
+	Bruce Cowan (en_GB)
+	Chao-Hsiung Liao (zh_TW)
 	Charles Monzat (fr)
-	Kukuh Syafaat (id)
-	Luna Jernberg (sv)
+	Daniel Mustieles (es)
+	Daniel Șerbănescu (ro)
 	Emin Tufan Çetin (tr)
+	Enrico Nicoletto (pt_BR)
+	Fabio Tomat (fur)
+	Florentina Mușat (ro)
+	Fran Dieguez (gl)
+	Gianvito Cavasoli (it)
+	Hugo Carvalho (pt)
+	Kjartan Maraas (nb)
+	Luna Jernberg (sv)
+	Nathan Follens (nl)
+	Piotr Drąg (pl)
+	Tim Sabsch (de)
+	Yuri Chornoivan (uk)
+	Zander Brown (en_GB)
+	Мирослав Николић (sr)
 
 Evolution-Data-Server 3.40.0 2021-03-19
 ---------------------------------------
