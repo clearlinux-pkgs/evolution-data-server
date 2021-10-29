@@ -504,6 +504,7 @@ libcamel-1.2.so.63:camel_header_token_decode
 libcamel-1.2.so.63:camel_header_unfold
 libcamel-1.2.so.63:camel_headers_dup_mailing_list
 libcamel-1.2.so.63:camel_host_idna_to_ascii
+libcamel-1.2.so.63:camel_hostname_utils_requires_ascii
 libcamel-1.2.so.63:camel_html_parser_attr
 libcamel-1.2.so.63:camel_html_parser_attr_list
 libcamel-1.2.so.63:camel_html_parser_get_type
@@ -548,6 +549,7 @@ libcamel-1.2.so.63:camel_internet_address_format_address
 libcamel-1.2.so.63:camel_internet_address_get
 libcamel-1.2.so.63:camel_internet_address_get_type
 libcamel-1.2.so.63:camel_internet_address_new
+libcamel-1.2.so.63:camel_internet_address_sanitize_ascii_domain
 libcamel-1.2.so.63:camel_junk_filter_classify
 libcamel-1.2.so.63:camel_junk_filter_get_type
 libcamel-1.2.so.63:camel_junk_filter_learn_junk
@@ -1284,6 +1286,7 @@ libcamel-1.2.so.63:camel_stream_set_base_stream
 libcamel-1.2.so.63:camel_stream_write
 libcamel-1.2.so.63:camel_stream_write_string
 libcamel-1.2.so.63:camel_stream_write_to_stream
+libcamel-1.2.so.63:camel_string_is_all_ascii
 libcamel-1.2.so.63:camel_strstrcase
 libcamel-1.2.so.63:camel_subscribable_folder_is_subscribed
 libcamel-1.2.so.63:camel_subscribable_folder_subscribed
@@ -1386,6 +1389,9 @@ libcamel-1.2.so.63:camel_util_decode_user_header_setting
 libcamel-1.2.so.63:camel_util_encode_user_header_setting
 libcamel-1.2.so.63:camel_util_fill_message_info_user_headers
 libcamel-1.2.so.63:camel_util_get_directory_variants
+libcamel-1.2.so.63:camel_utils_sanitize_ascii_domain_in_address
+libcamel-1.2.so.63:camel_utils_sanitize_ascii_domain_in_url
+libcamel-1.2.so.63:camel_utils_sanitize_ascii_domain_in_url_str
 libcamel-1.2.so.63:camel_utils_weak_ref_free
 libcamel-1.2.so.63:camel_utils_weak_ref_new
 libcamel-1.2.so.63:camel_uudecode_step
