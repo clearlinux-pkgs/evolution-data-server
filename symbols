@@ -183,6 +183,7 @@ libcamel-1.2.so.63:camel_db_delete_folder
 libcamel-1.2.so.63:camel_db_delete_uid
 libcamel-1.2.so.63:camel_db_delete_uids
 libcamel-1.2.so.63:camel_db_end_transaction
+libcamel-1.2.so.63:camel_db_error_quark
 libcamel-1.2.so.63:camel_db_flush_in_memory_transactions
 libcamel-1.2.so.63:camel_db_free_sqlized_string
 libcamel-1.2.so.63:camel_db_get_column_ident
@@ -1092,6 +1093,7 @@ libcamel-1.2.so.63:camel_service_set_password
 libcamel-1.2.so.63:camel_service_set_proxy_resolver
 libcamel-1.2.so.63:camel_service_set_settings
 libcamel-1.2.so.63:camel_session_add_service
+libcamel-1.2.so.63:camel_session_addressbook_contains_sync
 libcamel-1.2.so.63:camel_session_alert_type_get_type
 libcamel-1.2.so.63:camel_session_authenticate
 libcamel-1.2.so.63:camel_session_authenticate_finish
@@ -1734,6 +1736,9 @@ libebook-1.2.so.20:e_book_client_connect_direct_finish
 libebook-1.2.so.20:e_book_client_connect_direct_sync
 libebook-1.2.so.20:e_book_client_connect_finish
 libebook-1.2.so.20:e_book_client_connect_sync
+libebook-1.2.so.20:e_book_client_contains_email
+libebook-1.2.so.20:e_book_client_contains_email_finish
+libebook-1.2.so.20:e_book_client_contains_email_sync
 libebook-1.2.so.20:e_book_client_cursor_get_alphabet
 libebook-1.2.so.20:e_book_client_cursor_get_contact_alphabetic_index
 libebook-1.2.so.20:e_book_client_cursor_get_position
@@ -1905,6 +1910,7 @@ libebook-contacts-1.2.so.3:e_book_query_unref
 libebook-contacts-1.2.so.3:e_book_query_vcard_field_exists
 libebook-contacts-1.2.so.3:e_book_query_vcard_field_test
 libebook-contacts-1.2.so.3:e_book_util_conflict_resolution_to_operation_flags
+libebook-contacts-1.2.so.3:e_book_util_foreach_address
 libebook-contacts-1.2.so.3:e_book_util_operation_flags_to_conflict_resolution
 libebook-contacts-1.2.so.3:e_contact_address_free
 libebook-contacts-1.2.so.3:e_contact_address_get_type
@@ -2597,6 +2603,9 @@ libedata-book-1.2.so.26:e_book_backend_cache_search
 libedata-book-1.2.so.26:e_book_backend_cache_set_populated
 libedata-book-1.2.so.26:e_book_backend_cache_set_time
 libedata-book-1.2.so.26:e_book_backend_configure_direct
+libedata-book-1.2.so.26:e_book_backend_contains_email
+libedata-book-1.2.so.26:e_book_backend_contains_email_finish
+libedata-book-1.2.so.26:e_book_backend_contains_email_sync
 libedata-book-1.2.so.26:e_book_backend_create_contacts
 libedata-book-1.2.so.26:e_book_backend_create_contacts_finish
 libedata-book-1.2.so.26:e_book_backend_create_contacts_sync
@@ -2720,6 +2729,7 @@ libedata-book-1.2.so.26:e_book_backend_summary_remove_contact
 libedata-book-1.2.so.26:e_book_backend_summary_save
 libedata-book-1.2.so.26:e_book_backend_summary_search
 libedata-book-1.2.so.26:e_book_backend_summary_touch
+libedata-book-1.2.so.26:e_book_backend_sync_contains_email
 libedata-book-1.2.so.26:e_book_backend_sync_create_contacts
 libedata-book-1.2.so.26:e_book_backend_sync_get_contact
 libedata-book-1.2.so.26:e_book_backend_sync_get_contact_list
@@ -2729,6 +2739,7 @@ libedata-book-1.2.so.26:e_book_backend_sync_modify_contacts
 libedata-book-1.2.so.26:e_book_backend_sync_open
 libedata-book-1.2.so.26:e_book_backend_sync_refresh
 libedata-book-1.2.so.26:e_book_backend_sync_remove_contacts
+libedata-book-1.2.so.26:e_book_cache_contains_email
 libedata-book-1.2.so.26:e_book_cache_cursor_calculate
 libedata-book-1.2.so.26:e_book_cache_cursor_compare_contact
 libedata-book-1.2.so.26:e_book_cache_cursor_free
@@ -2856,6 +2867,7 @@ libedata-book-1.2.so.26:e_data_book_new
 libedata-book-1.2.so.26:e_data_book_ref_backend
 libedata-book-1.2.so.26:e_data_book_report_backend_property_changed
 libedata-book-1.2.so.26:e_data_book_report_error
+libedata-book-1.2.so.26:e_data_book_respond_contains_email
 libedata-book-1.2.so.26:e_data_book_respond_create_contacts
 libedata-book-1.2.so.26:e_data_book_respond_get_contact
 libedata-book-1.2.so.26:e_data_book_respond_get_contact_list
@@ -3933,6 +3945,10 @@ libedataserver-1.2.so.26:e_source_webdav_get_resource_query
 libedataserver-1.2.so.26:e_source_webdav_get_ssl_trust
 libedataserver-1.2.so.26:e_source_webdav_get_ssl_trust_response
 libedataserver-1.2.so.26:e_source_webdav_get_type
+libedataserver-1.2.so.26:e_source_webdav_notes_dup_default_ext
+libedataserver-1.2.so.26:e_source_webdav_notes_get_default_ext
+libedataserver-1.2.so.26:e_source_webdav_notes_get_type
+libedataserver-1.2.so.26:e_source_webdav_notes_set_default_ext
 libedataserver-1.2.so.26:e_source_webdav_set_avoid_ifmatch
 libedataserver-1.2.so.26:e_source_webdav_set_calendar_auto_schedule
 libedataserver-1.2.so.26:e_source_webdav_set_color
@@ -4131,6 +4147,7 @@ libedataserver-1.2.so.26:e_xmlhash_new
 libedataserver-1.2.so.26:e_xmlhash_remove
 libedataserver-1.2.so.26:e_xmlhash_write
 libedataserver-1.2.so.26:eds_check_version
+libedataserverui-1.2.so.3:_libedataserverui_init_icon_theme
 libedataserverui-1.2.so.3:_libedataserverui_load_modules
 libedataserverui-1.2.so.3:e_buffer_tagger_connect
 libedataserverui-1.2.so.3:e_buffer_tagger_disconnect
