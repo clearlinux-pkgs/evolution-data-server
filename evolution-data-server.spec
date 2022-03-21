@@ -4,7 +4,7 @@
 #
 Name     : evolution-data-server
 Version  : 3.44.0
-Release  : 91
+Release  : 92
 URL      : https://download.gnome.org/sources/evolution-data-server/3.44/evolution-data-server-3.44.0.tar.xz
 Source0  : https://download.gnome.org/sources/evolution-data-server/3.44/evolution-data-server-3.44.0.tar.xz
 Summary  : The evolution data server for the calendar and addressbook
@@ -33,7 +33,7 @@ BuildRequires : pkgconfig(gcr-base-3)
 BuildRequires : pkgconfig(gio-2.0)
 BuildRequires : pkgconfig(gio-unix-2.0)
 BuildRequires : pkgconfig(gmodule-2.0)
-BuildRequires : pkgconfig(gweather-3.0)
+BuildRequires : pkgconfig(gweather4)
 BuildRequires : pkgconfig(icu-i18n)
 BuildRequires : pkgconfig(krb5)
 BuildRequires : pkgconfig(krb5-gssapi)
@@ -130,7 +130,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1647721874
+export SOURCE_DATE_EPOCH=1647886720
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -148,12 +148,12 @@ export CXXFLAGS="$CXXFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-
 -DENABLE_INTROSPECTION=ON \
 -DENABLE_VALA_BINDINGS=ON \
 -DENABLE_BACKEND_PER_PROCESS=ON \
--DENABLE_WEATHER=ON
+-DENABLE_WEATHER=OFF
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1647721874
+export SOURCE_DATE_EPOCH=1647886720
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution-data-server
 cp %{_builddir}/evolution-data-server-3.44.0/COPYING %{buildroot}/usr/share/package-licenses/evolution-data-server/570d185ea721e7d6aee7426be1b10a800af98aa8
@@ -624,7 +624,6 @@ mv %{buildroot}/usr/etc/xdg %{buildroot}/usr/share/xdg
 /usr/lib64/evolution-data-server/calendar-backends/libecalbackendfile.so
 /usr/lib64/evolution-data-server/calendar-backends/libecalbackendgtasks.so
 /usr/lib64/evolution-data-server/calendar-backends/libecalbackendhttp.so
-/usr/lib64/evolution-data-server/calendar-backends/libecalbackendweather.so
 /usr/lib64/evolution-data-server/calendar-backends/libecalbackendwebdavnotes.so
 /usr/lib64/evolution-data-server/camel-providers/libcamelimapx.so
 /usr/lib64/evolution-data-server/camel-providers/libcamellocal.so
