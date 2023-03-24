@@ -1551,6 +1551,20 @@ libebackend-1.2.so.11:e_cache_get_uids
 libebackend-1.2.so.11:e_cache_get_version
 libebackend-1.2.so.11:e_cache_initialize_sync
 libebackend-1.2.so.11:e_cache_is_revision_change_frozen
+libebackend-1.2.so.11:e_cache_keys_count_keys_sync
+libebackend-1.2.so.11:e_cache_keys_foreach_sync
+libebackend-1.2.so.11:e_cache_keys_get_cache
+libebackend-1.2.so.11:e_cache_keys_get_key_column_name
+libebackend-1.2.so.11:e_cache_keys_get_ref_count_sync
+libebackend-1.2.so.11:e_cache_keys_get_sync
+libebackend-1.2.so.11:e_cache_keys_get_table_name
+libebackend-1.2.so.11:e_cache_keys_get_type
+libebackend-1.2.so.11:e_cache_keys_get_value_column_name
+libebackend-1.2.so.11:e_cache_keys_init_table_sync
+libebackend-1.2.so.11:e_cache_keys_new
+libebackend-1.2.so.11:e_cache_keys_put_sync
+libebackend-1.2.so.11:e_cache_keys_remove_all_sync
+libebackend-1.2.so.11:e_cache_keys_remove_sync
 libebackend-1.2.so.11:e_cache_lock
 libebackend-1.2.so.11:e_cache_offline_change_copy
 libebackend-1.2.so.11:e_cache_offline_change_free
@@ -1920,6 +1934,7 @@ libebook-contacts-1.2.so.4:e_book_query_unref
 libebook-contacts-1.2.so.4:e_book_query_vcard_field_exists
 libebook-contacts-1.2.so.4:e_book_query_vcard_field_test
 libebook-contacts-1.2.so.4:e_book_util_conflict_resolution_to_operation_flags
+libebook-contacts-1.2.so.4:e_book_util_diff_categories
 libebook-contacts-1.2.so.4:e_book_util_foreach_address
 libebook-contacts-1.2.so.4:e_book_util_operation_flags_to_conflict_resolution
 libebook-contacts-1.2.so.4:e_contact_address_free
@@ -2086,6 +2101,7 @@ libecal-2.0.so.2:e_cal_client_error_to_string
 libecal-2.0.so.2:e_cal_client_generate_instances
 libecal-2.0.so.2:e_cal_client_generate_instances_for_object
 libecal-2.0.so.2:e_cal_client_generate_instances_for_object_sync
+libecal-2.0.so.2:e_cal_client_generate_instances_for_uid_sync
 libecal-2.0.so.2:e_cal_client_generate_instances_sync
 libecal-2.0.so.2:e_cal_client_get_attachment_uris
 libecal-2.0.so.2:e_cal_client_get_attachment_uris_finish
@@ -2177,6 +2193,7 @@ libecal-2.0.so.2:e_cal_component_alarm_has_attachments
 libecal-2.0.so.2:e_cal_component_alarm_has_attendees
 libecal-2.0.so.2:e_cal_component_alarm_instance_copy
 libecal-2.0.so.2:e_cal_component_alarm_instance_free
+libecal-2.0.so.2:e_cal_component_alarm_instance_get_component
 libecal-2.0.so.2:e_cal_component_alarm_instance_get_occur_end
 libecal-2.0.so.2:e_cal_component_alarm_instance_get_occur_start
 libecal-2.0.so.2:e_cal_component_alarm_instance_get_rid
@@ -2184,6 +2201,7 @@ libecal-2.0.so.2:e_cal_component_alarm_instance_get_time
 libecal-2.0.so.2:e_cal_component_alarm_instance_get_type
 libecal-2.0.so.2:e_cal_component_alarm_instance_get_uid
 libecal-2.0.so.2:e_cal_component_alarm_instance_new
+libecal-2.0.so.2:e_cal_component_alarm_instance_set_component
 libecal-2.0.so.2:e_cal_component_alarm_instance_set_occur_end
 libecal-2.0.so.2:e_cal_component_alarm_instance_set_occur_start
 libecal-2.0.so.2:e_cal_component_alarm_instance_set_rid
@@ -2530,11 +2548,15 @@ libecal-2.0.so.2:e_cal_util_component_set_x_property
 libecal-2.0.so.2:e_cal_util_conflict_resolution_to_operation_flags
 libecal-2.0.so.2:e_cal_util_construct_instance
 libecal-2.0.so.2:e_cal_util_copy_timezone
+libecal-2.0.so.2:e_cal_util_diff_categories
+libecal-2.0.so.2:e_cal_util_foreach_category
 libecal-2.0.so.2:e_cal_util_generate_alarms_for_comp
 libecal-2.0.so.2:e_cal_util_generate_alarms_for_list
+libecal-2.0.so.2:e_cal_util_generate_alarms_for_uid_sync
 libecal-2.0.so.2:e_cal_util_get_component_occur_times
 libecal-2.0.so.2:e_cal_util_get_system_timezone
 libecal-2.0.so.2:e_cal_util_get_system_timezone_location
+libecal-2.0.so.2:e_cal_util_has_alarms_in_range
 libecal-2.0.so.2:e_cal_util_icaltime_to_tm
 libecal-2.0.so.2:e_cal_util_icaltime_to_tm_with_zone
 libecal-2.0.so.2:e_cal_util_init_recur_task_sync
@@ -2769,6 +2791,7 @@ libedata-book-1.2.so.27:e_book_cache_cursor_new
 libedata-book-1.2.so.27:e_book_cache_cursor_set_sexp
 libedata-book-1.2.so.27:e_book_cache_cursor_set_target_alphabetic_index
 libedata-book-1.2.so.27:e_book_cache_cursor_step
+libedata-book-1.2.so.27:e_book_cache_dup_categories
 libedata-book-1.2.so.27:e_book_cache_dup_contact_revision
 libedata-book-1.2.so.27:e_book_cache_dup_locale
 libedata-book-1.2.so.27:e_book_cache_get_contact
@@ -2837,6 +2860,7 @@ libedata-book-1.2.so.27:e_book_sqlite_cursor_set_sexp
 libedata-book-1.2.so.27:e_book_sqlite_cursor_set_target_alphabetic_index
 libedata-book-1.2.so.27:e_book_sqlite_cursor_step
 libedata-book-1.2.so.27:e_book_sqlite_error_quark
+libedata-book-1.2.so.27:e_book_sqlite_exec
 libedata-book-1.2.so.27:e_book_sqlite_get_contact
 libedata-book-1.2.so.27:e_book_sqlite_get_contact_extra
 libedata-book-1.2.so.27:e_book_sqlite_get_key_value
@@ -2855,6 +2879,7 @@ libedata-book-1.2.so.27:e_book_sqlite_remove_contacts
 libedata-book-1.2.so.27:e_book_sqlite_search
 libedata-book-1.2.so.27:e_book_sqlite_search_data_free
 libedata-book-1.2.so.27:e_book_sqlite_search_uids
+libedata-book-1.2.so.27:e_book_sqlite_select
 libedata-book-1.2.so.27:e_book_sqlite_set_contact_extra
 libedata-book-1.2.so.27:e_book_sqlite_set_key_value
 libedata-book-1.2.so.27:e_book_sqlite_set_key_value_int
@@ -3469,6 +3494,7 @@ libedataserver-1.2.so.27:e_oauth2_service_base_get_type
 libedataserver-1.2.so.27:e_oauth2_service_can_process
 libedataserver-1.2.so.27:e_oauth2_service_delete_token_sync
 libedataserver-1.2.so.27:e_oauth2_service_extract_authorization_code
+libedataserver-1.2.so.27:e_oauth2_service_extract_error_message
 libedataserver-1.2.so.27:e_oauth2_service_get_access_token_sync
 libedataserver-1.2.so.27:e_oauth2_service_get_authentication_policy
 libedataserver-1.2.so.27:e_oauth2_service_get_authentication_uri
@@ -3491,6 +3517,7 @@ libedataserver-1.2.so.27:e_oauth2_service_prepare_refresh_token_message
 libedataserver-1.2.so.27:e_oauth2_service_receive_and_store_token_sync
 libedataserver-1.2.so.27:e_oauth2_service_refresh_and_store_token_sync
 libedataserver-1.2.so.27:e_oauth2_service_util_compile_value
+libedataserver-1.2.so.27:e_oauth2_service_util_extract_from_uri
 libedataserver-1.2.so.27:e_oauth2_service_util_set_to_form
 libedataserver-1.2.so.27:e_oauth2_service_util_take_to_form
 libedataserver-1.2.so.27:e_oauth2_service_yahoo_get_type
@@ -3542,6 +3569,7 @@ libedataserver-1.2.so.27:e_soup_session_check_result
 libedataserver-1.2.so.27:e_soup_session_dup_credentials
 libedataserver-1.2.so.27:e_soup_session_error_quark
 libedataserver-1.2.so.27:e_soup_session_get_authentication_requires_credentials
+libedataserver-1.2.so.27:e_soup_session_get_force_http1
 libedataserver-1.2.so.27:e_soup_session_get_log_level
 libedataserver-1.2.so.27:e_soup_session_get_source
 libedataserver-1.2.so.27:e_soup_session_get_ssl_error_details
@@ -3556,7 +3584,9 @@ libedataserver-1.2.so.27:e_soup_session_send_message_finish
 libedataserver-1.2.so.27:e_soup_session_send_message_simple_sync
 libedataserver-1.2.so.27:e_soup_session_send_message_sync
 libedataserver-1.2.so.27:e_soup_session_set_credentials
+libedataserver-1.2.so.27:e_soup_session_set_force_http1
 libedataserver-1.2.so.27:e_soup_session_setup_logging
+libedataserver-1.2.so.27:e_soup_session_util_get_force_http1_supported
 libedataserver-1.2.so.27:e_soup_session_util_get_message_bytes
 libedataserver-1.2.so.27:e_soup_session_util_normalize_uri_path
 libedataserver-1.2.so.27:e_soup_session_util_ref_message_request_body
@@ -4103,6 +4133,7 @@ libedataserver-1.2.so.27:e_uri_to_string
 libedataserver-1.2.so.27:e_url_equal
 libedataserver-1.2.so.27:e_url_shroud
 libedataserver-1.2.so.27:e_utf8_strftime
+libedataserver-1.2.so.27:e_util_call_malloc_trim
 libedataserver-1.2.so.27:e_util_can_use_collection_as_credential_source
 libedataserver-1.2.so.27:e_util_change_uri_component
 libedataserver-1.2.so.27:e_util_change_uri_port
