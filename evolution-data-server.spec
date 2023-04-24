@@ -4,10 +4,10 @@
 # Using build pattern: cmake
 #
 Name     : evolution-data-server
-Version  : 3.48.0
-Release  : 108
-URL      : https://download.gnome.org/sources/evolution-data-server/3.48/evolution-data-server-3.48.0.tar.xz
-Source0  : https://download.gnome.org/sources/evolution-data-server/3.48/evolution-data-server-3.48.0.tar.xz
+Version  : 3.48.1
+Release  : 109
+URL      : https://download.gnome.org/sources/evolution-data-server/3.48/evolution-data-server-3.48.1.tar.xz
+Source0  : https://download.gnome.org/sources/evolution-data-server/3.48/evolution-data-server-3.48.1.tar.xz
 Summary  : The evolution data server for the calendar and addressbook
 Group    : Development/Tools
 License  : LGPL-2.0
@@ -121,21 +121,22 @@ locales components for the evolution-data-server package.
 %package services
 Summary: services components for the evolution-data-server package.
 Group: Systemd services
+Requires: systemd
 
 %description services
 services components for the evolution-data-server package.
 
 
 %prep
-%setup -q -n evolution-data-server-3.48.0
-cd %{_builddir}/evolution-data-server-3.48.0
+%setup -q -n evolution-data-server-3.48.1
+cd %{_builddir}/evolution-data-server-3.48.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1680022109
+export SOURCE_DATE_EPOCH=1682358384
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -159,7 +160,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1680022109
+export SOURCE_DATE_EPOCH=1682358384
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution-data-server
 cp %{_builddir}/evolution-data-server-%{version}/COPYING %{buildroot}/usr/share/package-licenses/evolution-data-server/570d185ea721e7d6aee7426be1b10a800af98aa8 || :

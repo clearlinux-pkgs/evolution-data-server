@@ -2848,6 +2848,7 @@ libedata-book-1.2.so.27:e_book_meta_backend_search_uids_sync
 libedata-book-1.2.so.27:e_book_meta_backend_set_cache
 libedata-book-1.2.so.27:e_book_meta_backend_set_connected_writable
 libedata-book-1.2.so.27:e_book_meta_backend_set_ever_connected
+libedata-book-1.2.so.27:e_book_meta_backend_set_sync_tag
 libedata-book-1.2.so.27:e_book_meta_backend_split_changes_sync
 libedata-book-1.2.so.27:e_book_meta_backend_store_inline_photos_sync
 libedata-book-1.2.so.27:e_book_sqlite_add_contact
@@ -3126,6 +3127,7 @@ libedata-cal-2.0.so.2:e_cal_meta_backend_search_sync
 libedata-cal-2.0.so.2:e_cal_meta_backend_set_cache
 libedata-cal-2.0.so.2:e_cal_meta_backend_set_connected_writable
 libedata-cal-2.0.so.2:e_cal_meta_backend_set_ever_connected
+libedata-cal-2.0.so.2:e_cal_meta_backend_set_sync_tag
 libedata-cal-2.0.so.2:e_cal_meta_backend_split_changes_sync
 libedata-cal-2.0.so.2:e_cal_meta_backend_store_inline_attachments_sync
 libedata-cal-2.0.so.2:e_data_cal_factory_get_type
