@@ -5,7 +5,7 @@
 #
 Name     : evolution-data-server
 Version  : 3.48.1
-Release  : 109
+Release  : 110
 URL      : https://download.gnome.org/sources/evolution-data-server/3.48/evolution-data-server-3.48.1.tar.xz
 Source0  : https://download.gnome.org/sources/evolution-data-server/3.48/evolution-data-server-3.48.1.tar.xz
 Summary  : The evolution data server for the calendar and addressbook
@@ -48,7 +48,6 @@ BuildRequires : pkgconfig(libsoup-2.4)
 BuildRequires : pkgconfig(libsoup-3.0)
 BuildRequires : pkgconfig(libxml-2.0)
 BuildRequires : pkgconfig(sqlite3)
-BuildRequires : pkgconfig(webkit2gtk-4.0)
 BuildRequires : python3
 BuildRequires : sqlite-autoconf-dev
 BuildRequires : usrbinpython
@@ -136,17 +135,42 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682358384
+export SOURCE_DATE_EPOCH=1683312624
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+%cmake .. -DENABLE_GOOGLE_AUTH=OFF \
+-DENABLE_UOA=OFF \
+-DENABLE_WEATHER=OFF \
+-DWITH_LIBDB=OFF \
+-DENABLE_INTROSPECTION=ON \
+-DENABLE_VALA_BINDINGS=ON \
+-DENABLE_BACKEND_PER_PROCESS=ON \
+-DENABLE_WEATHER=OFF \
+-DENABLE_OAUTH2_WEBKITGTK4=OFF
+make  %{?_smp_mflags}
+popd
+mkdir -p clr-build-avx2
+pushd clr-build-avx2
+export GCC_IGNORE_WERROR=1
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -Os -Wl,-z,x86-64-v3 -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export FCFLAGS="$FFLAGS -O3 -Os -Wl,-z,x86-64-v3 -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export FFLAGS="$FFLAGS -O3 -Os -Wl,-z,x86-64-v3 -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export CXXFLAGS="$CXXFLAGS -O3 -Os -Wl,-z,x86-64-v3 -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -fstack-protector-strong -fzero-call-used-regs=used -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export CFLAGS="$CFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
+export CXXFLAGS="$CXXFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
+export FFLAGS="$FFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
+export FCFLAGS="$FCFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
 %cmake .. -DENABLE_GOOGLE_AUTH=OFF \
 -DENABLE_UOA=OFF \
 -DENABLE_WEATHER=OFF \
@@ -160,10 +184,13 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1682358384
+export SOURCE_DATE_EPOCH=1683312624
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution-data-server
 cp %{_builddir}/evolution-data-server-%{version}/COPYING %{buildroot}/usr/share/package-licenses/evolution-data-server/570d185ea721e7d6aee7426be1b10a800af98aa8 || :
+pushd clr-build-avx2
+%make_install_v3  || :
+popd
 pushd clr-build
 %make_install
 popd
@@ -171,6 +198,7 @@ popd
 ## install_append content
 mv %{buildroot}/usr/etc/xdg %{buildroot}/usr/share/xdg
 ## install_append end
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -273,6 +301,16 @@ mv %{buildroot}/usr/etc/xdg %{buildroot}/usr/share/xdg
 
 %files dev
 %defattr(-,root,root,-)
+/V3/usr/lib64/libcamel-1.2.so
+/V3/usr/lib64/libebackend-1.2.so
+/V3/usr/lib64/libebook-1.2.so
+/V3/usr/lib64/libebook-contacts-1.2.so
+/V3/usr/lib64/libecal-2.0.so
+/V3/usr/lib64/libedata-book-1.2.so
+/V3/usr/lib64/libedata-cal-2.0.so
+/V3/usr/lib64/libedataserver-1.2.so
+/V3/usr/lib64/libedataserverui-1.2.so
+/V3/usr/lib64/libedataserverui4-1.0.so
 /usr/include/evolution-data-server/camel/camel-address.h
 /usr/include/evolution-data-server/camel/camel-async-closure.h
 /usr/include/evolution-data-server/camel/camel-autocleanups.h
@@ -644,6 +682,52 @@ mv %{buildroot}/usr/etc/xdg %{buildroot}/usr/share/xdg
 
 %files lib
 %defattr(-,root,root,-)
+/V3/usr/lib64/evolution-data-server/addressbook-backends/libebookbackendcarddav.so
+/V3/usr/lib64/evolution-data-server/addressbook-backends/libebookbackendfile.so
+/V3/usr/lib64/evolution-data-server/addressbook-backends/libebookbackendldap.so
+/V3/usr/lib64/evolution-data-server/calendar-backends/libecalbackendcaldav.so
+/V3/usr/lib64/evolution-data-server/calendar-backends/libecalbackendcontacts.so
+/V3/usr/lib64/evolution-data-server/calendar-backends/libecalbackendfile.so
+/V3/usr/lib64/evolution-data-server/calendar-backends/libecalbackendgtasks.so
+/V3/usr/lib64/evolution-data-server/calendar-backends/libecalbackendhttp.so
+/V3/usr/lib64/evolution-data-server/calendar-backends/libecalbackendwebdavnotes.so
+/V3/usr/lib64/evolution-data-server/camel-providers/libcamelimapx.so
+/V3/usr/lib64/evolution-data-server/camel-providers/libcamellocal.so
+/V3/usr/lib64/evolution-data-server/camel-providers/libcamelnntp.so
+/V3/usr/lib64/evolution-data-server/camel-providers/libcamelpop3.so
+/V3/usr/lib64/evolution-data-server/camel-providers/libcamelsendmail.so
+/V3/usr/lib64/evolution-data-server/camel-providers/libcamelsmtp.so
+/V3/usr/lib64/evolution-data-server/credential-modules/module-credentials-goa.so
+/V3/usr/lib64/evolution-data-server/libedbus-private.so
+/V3/usr/lib64/evolution-data-server/registry-modules/module-cache-reaper.so
+/V3/usr/lib64/evolution-data-server/registry-modules/module-gnome-online-accounts.so
+/V3/usr/lib64/evolution-data-server/registry-modules/module-google-backend.so
+/V3/usr/lib64/evolution-data-server/registry-modules/module-oauth2-services.so
+/V3/usr/lib64/evolution-data-server/registry-modules/module-outlook-backend.so
+/V3/usr/lib64/evolution-data-server/registry-modules/module-secret-monitor.so
+/V3/usr/lib64/evolution-data-server/registry-modules/module-trust-prompt.so
+/V3/usr/lib64/evolution-data-server/registry-modules/module-webdav-backend.so
+/V3/usr/lib64/evolution-data-server/registry-modules/module-yahoo-backend.so
+/V3/usr/lib64/libcamel-1.2.so.64
+/V3/usr/lib64/libcamel-1.2.so.64.0.0
+/V3/usr/lib64/libebackend-1.2.so.11
+/V3/usr/lib64/libebackend-1.2.so.11.0.0
+/V3/usr/lib64/libebook-1.2.so.21
+/V3/usr/lib64/libebook-1.2.so.21.1.3
+/V3/usr/lib64/libebook-contacts-1.2.so.4
+/V3/usr/lib64/libebook-contacts-1.2.so.4.0.0
+/V3/usr/lib64/libecal-2.0.so.2
+/V3/usr/lib64/libecal-2.0.so.2.0.0
+/V3/usr/lib64/libedata-book-1.2.so.27
+/V3/usr/lib64/libedata-book-1.2.so.27.0.0
+/V3/usr/lib64/libedata-cal-2.0.so.2
+/V3/usr/lib64/libedata-cal-2.0.so.2.0.0
+/V3/usr/lib64/libedataserver-1.2.so.27
+/V3/usr/lib64/libedataserver-1.2.so.27.0.0
+/V3/usr/lib64/libedataserverui-1.2.so.4
+/V3/usr/lib64/libedataserverui-1.2.so.4.0.0
+/V3/usr/lib64/libedataserverui4-1.0.so.0
+/V3/usr/lib64/libedataserverui4-1.0.so.0.0.0
 /usr/lib64/evolution-data-server/addressbook-backends/libebookbackendcarddav.so
 /usr/lib64/evolution-data-server/addressbook-backends/libebookbackendfile.so
 /usr/lib64/evolution-data-server/addressbook-backends/libebookbackendldap.so
@@ -693,6 +777,19 @@ mv %{buildroot}/usr/etc/xdg %{buildroot}/usr/share/xdg
 
 %files libexec
 %defattr(-,root,root,-)
+/V3/usr/libexec/camel-gpg-photo-saver
+/V3/usr/libexec/camel-index-control-1.2
+/V3/usr/libexec/camel-lock-helper-1.2
+/V3/usr/libexec/evolution-addressbook-factory
+/V3/usr/libexec/evolution-addressbook-factory-subprocess
+/V3/usr/libexec/evolution-calendar-factory
+/V3/usr/libexec/evolution-calendar-factory-subprocess
+/V3/usr/libexec/evolution-data-server/addressbook-export
+/V3/usr/libexec/evolution-data-server/evolution-alarm-notify
+/V3/usr/libexec/evolution-data-server/list-sources
+/V3/usr/libexec/evolution-scan-gconf-tree-xml
+/V3/usr/libexec/evolution-source-registry
+/V3/usr/libexec/evolution-user-prompter
 /usr/libexec/camel-gpg-photo-saver
 /usr/libexec/camel-index-control-1.2
 /usr/libexec/camel-lock-helper-1.2
