@@ -14,8 +14,8 @@ libgtk-3.so.0
 libgtk-4.so.1
 libical-glib.so.3
 libical.so.3
-libicui18n.so.70
-libicuuc.so.70
+libicui18n.so.73
+libicuuc.so.73
 libjson-glib-1.0.so.0
 liblber-2.4.so.2
 libldap-2.4.so.2
