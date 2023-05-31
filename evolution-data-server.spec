@@ -5,7 +5,7 @@
 #
 Name     : evolution-data-server
 Version  : 3.48.2
-Release  : 112
+Release  : 113
 URL      : https://download.gnome.org/sources/evolution-data-server/3.48/evolution-data-server-3.48.2.tar.xz
 Source0  : https://download.gnome.org/sources/evolution-data-server/3.48/evolution-data-server-3.48.2.tar.xz
 Summary  : The evolution data server for the calendar and addressbook
@@ -135,7 +135,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1685121799
+export SOURCE_DATE_EPOCH=1685500851
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -184,7 +184,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1685121799
+export SOURCE_DATE_EPOCH=1685500851
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution-data-server
 cp %{_builddir}/evolution-data-server-%{version}/COPYING %{buildroot}/usr/share/package-licenses/evolution-data-server/570d185ea721e7d6aee7426be1b10a800af98aa8 || :
@@ -301,16 +301,6 @@ mv %{buildroot}/usr/etc/xdg %{buildroot}/usr/share/xdg
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libcamel-1.2.so
-/V3/usr/lib64/libebackend-1.2.so
-/V3/usr/lib64/libebook-1.2.so
-/V3/usr/lib64/libebook-contacts-1.2.so
-/V3/usr/lib64/libecal-2.0.so
-/V3/usr/lib64/libedata-book-1.2.so
-/V3/usr/lib64/libedata-cal-2.0.so
-/V3/usr/lib64/libedataserver-1.2.so
-/V3/usr/lib64/libedataserverui-1.2.so
-/V3/usr/lib64/libedataserverui4-1.0.so
 /usr/include/evolution-data-server/camel/camel-address.h
 /usr/include/evolution-data-server/camel/camel-async-closure.h
 /usr/include/evolution-data-server/camel/camel-autocleanups.h
@@ -708,25 +698,15 @@ mv %{buildroot}/usr/etc/xdg %{buildroot}/usr/share/xdg
 /V3/usr/lib64/evolution-data-server/registry-modules/module-trust-prompt.so
 /V3/usr/lib64/evolution-data-server/registry-modules/module-webdav-backend.so
 /V3/usr/lib64/evolution-data-server/registry-modules/module-yahoo-backend.so
-/V3/usr/lib64/libcamel-1.2.so.64
 /V3/usr/lib64/libcamel-1.2.so.64.0.0
-/V3/usr/lib64/libebackend-1.2.so.11
 /V3/usr/lib64/libebackend-1.2.so.11.0.0
-/V3/usr/lib64/libebook-1.2.so.21
 /V3/usr/lib64/libebook-1.2.so.21.1.3
-/V3/usr/lib64/libebook-contacts-1.2.so.4
 /V3/usr/lib64/libebook-contacts-1.2.so.4.0.0
-/V3/usr/lib64/libecal-2.0.so.2
 /V3/usr/lib64/libecal-2.0.so.2.0.0
-/V3/usr/lib64/libedata-book-1.2.so.27
 /V3/usr/lib64/libedata-book-1.2.so.27.0.0
-/V3/usr/lib64/libedata-cal-2.0.so.2
 /V3/usr/lib64/libedata-cal-2.0.so.2.0.0
-/V3/usr/lib64/libedataserver-1.2.so.27
 /V3/usr/lib64/libedataserver-1.2.so.27.0.0
-/V3/usr/lib64/libedataserverui-1.2.so.4
 /V3/usr/lib64/libedataserverui-1.2.so.4.0.0
-/V3/usr/lib64/libedataserverui4-1.0.so.0
 /V3/usr/lib64/libedataserverui4-1.0.so.0.0.0
 /usr/lib64/evolution-data-server/addressbook-backends/libebookbackendcarddav.so
 /usr/lib64/evolution-data-server/addressbook-backends/libebookbackendfile.so
