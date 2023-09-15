@@ -4,10 +4,10 @@
 # Using build pattern: cmake
 #
 Name     : evolution-data-server
-Version  : 3.48.4
-Release  : 116
-URL      : https://download.gnome.org/sources/evolution-data-server/3.48/evolution-data-server-3.48.4.tar.xz
-Source0  : https://download.gnome.org/sources/evolution-data-server/3.48/evolution-data-server-3.48.4.tar.xz
+Version  : 3.50.0
+Release  : 117
+URL      : https://download.gnome.org/sources/evolution-data-server/3.50/evolution-data-server-3.50.0.tar.xz
+Source0  : https://download.gnome.org/sources/evolution-data-server/3.50/evolution-data-server-3.50.0.tar.xz
 Summary  : The evolution data server for the calendar and addressbook
 Group    : Development/Tools
 License  : LGPL-2.0
@@ -43,7 +43,6 @@ BuildRequires : pkgconfig(libgdata)
 BuildRequires : pkgconfig(libical)
 BuildRequires : pkgconfig(libical-glib)
 BuildRequires : pkgconfig(libsecret-1)
-BuildRequires : pkgconfig(libsecret-unstable)
 BuildRequires : pkgconfig(libsoup-2.4)
 BuildRequires : pkgconfig(libsoup-3.0)
 BuildRequires : pkgconfig(libxml-2.0)
@@ -127,15 +126,15 @@ services components for the evolution-data-server package.
 
 
 %prep
-%setup -q -n evolution-data-server-3.48.4
-cd %{_builddir}/evolution-data-server-3.48.4
+%setup -q -n evolution-data-server-3.50.0
+cd %{_builddir}/evolution-data-server-3.50.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1688408080
+export SOURCE_DATE_EPOCH=1694789665
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -184,7 +183,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1688408080
+export SOURCE_DATE_EPOCH=1694789665
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution-data-server
 cp %{_builddir}/evolution-data-server-%{version}/COPYING %{buildroot}/usr/share/package-licenses/evolution-data-server/570d185ea721e7d6aee7426be1b10a800af98aa8 || :
@@ -459,6 +458,7 @@ mv %{buildroot}/usr/etc/xdg %{buildroot}/usr/share/xdg
 /usr/include/evolution-data-server/libebook-contacts/e-book-contacts-enums.h
 /usr/include/evolution-data-server/libebook-contacts/e-book-contacts-enumtypes.h
 /usr/include/evolution-data-server/libebook-contacts/e-book-contacts-utils.h
+/usr/include/evolution-data-server/libebook-contacts/e-book-indices-updater.h
 /usr/include/evolution-data-server/libebook-contacts/e-book-query.h
 /usr/include/evolution-data-server/libebook-contacts/e-contact.h
 /usr/include/evolution-data-server/libebook-contacts/e-name-western.h
@@ -519,6 +519,9 @@ mv %{buildroot}/usr/etc/xdg %{buildroot}/usr/share/xdg
 /usr/include/evolution-data-server/libedata-book/e-data-book-cursor.h
 /usr/include/evolution-data-server/libedata-book/e-data-book-direct.h
 /usr/include/evolution-data-server/libedata-book/e-data-book-factory.h
+/usr/include/evolution-data-server/libedata-book/e-data-book-view-watcher-cache.h
+/usr/include/evolution-data-server/libedata-book/e-data-book-view-watcher-memory.h
+/usr/include/evolution-data-server/libedata-book/e-data-book-view-watcher-sqlite.h
 /usr/include/evolution-data-server/libedata-book/e-data-book-view.h
 /usr/include/evolution-data-server/libedata-book/e-data-book.h
 /usr/include/evolution-data-server/libedata-book/e-subprocess-book-factory.h
