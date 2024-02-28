@@ -7,7 +7,7 @@
 #
 Name     : evolution-data-server
 Version  : 3.50.4
-Release  : 121
+Release  : 122
 URL      : https://download.gnome.org/sources/evolution-data-server/3.50/evolution-data-server-3.50.4.tar.xz
 Source0  : https://download.gnome.org/sources/evolution-data-server/3.50/evolution-data-server-3.50.4.tar.xz
 Summary  : The evolution data server for the calendar and addressbook
@@ -51,7 +51,6 @@ BuildRequires : pkgconfig(libxml-2.0)
 BuildRequires : pkgconfig(sqlite3)
 BuildRequires : python3
 BuildRequires : sqlite-autoconf-dev
-BuildRequires : usrbinpython
 BuildRequires : webkitgtk-dev
 # Suppress stripping binaries
 %define __strip /bin/true
@@ -136,7 +135,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1707498478
+export SOURCE_DATE_EPOCH=1709160085
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -213,7 +212,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1707498478
+export SOURCE_DATE_EPOCH=1709160085
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution-data-server
 cp %{_builddir}/evolution-data-server-%{version}/COPYING %{buildroot}/usr/share/package-licenses/evolution-data-server/570d185ea721e7d6aee7426be1b10a800af98aa8 || :
