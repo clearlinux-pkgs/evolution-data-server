@@ -6,10 +6,10 @@
 # autospec commit: 5905be9
 #
 Name     : evolution-data-server
-Version  : 3.52.1
-Release  : 124
-URL      : https://download.gnome.org/sources/evolution-data-server/3.52/evolution-data-server-3.52.1.tar.xz
-Source0  : https://download.gnome.org/sources/evolution-data-server/3.52/evolution-data-server-3.52.1.tar.xz
+Version  : 3.52.2
+Release  : 125
+URL      : https://download.gnome.org/sources/evolution-data-server/3.52/evolution-data-server-3.52.2.tar.xz
+Source0  : https://download.gnome.org/sources/evolution-data-server/3.52/evolution-data-server-3.52.2.tar.xz
 Summary  : The evolution data server for the calendar and addressbook
 Group    : Development/Tools
 License  : LGPL-2.0
@@ -127,15 +127,15 @@ services components for the evolution-data-server package.
 
 
 %prep
-%setup -q -n evolution-data-server-3.52.1
-cd %{_builddir}/evolution-data-server-3.52.1
+%setup -q -n evolution-data-server-3.52.2
+cd %{_builddir}/evolution-data-server-3.52.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1713535782
+export SOURCE_DATE_EPOCH=1716828421
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -212,7 +212,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1713535782
+export SOURCE_DATE_EPOCH=1716828421
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/evolution-data-server
 cp %{_builddir}/evolution-data-server-%{version}/COPYING %{buildroot}/usr/share/package-licenses/evolution-data-server/570d185ea721e7d6aee7426be1b10a800af98aa8 || :
