@@ -13,3 +13,4 @@ openldap-dev
 python3
 sqlite-autoconf-dev
 webkitgtk-dev
+libcanberra-dev
