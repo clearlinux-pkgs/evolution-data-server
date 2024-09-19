@@ -527,6 +527,7 @@ libcamel-1.2.so.64:camel_header_token_decode
 libcamel-1.2.so.64:camel_header_unfold
 libcamel-1.2.so.64:camel_headers_dup_mailing_list
 libcamel-1.2.so.64:camel_host_idna_to_ascii
+libcamel-1.2.so.64:camel_hostname_utils_host_is_in_domain
 libcamel-1.2.so.64:camel_hostname_utils_requires_ascii
 libcamel-1.2.so.64:camel_html_parser_attr
 libcamel-1.2.so.64:camel_html_parser_attr_list
@@ -3576,6 +3577,10 @@ libedataserver-1.2.so.27:e_module_load_all_in_directory
 libedataserver-1.2.so.27:e_module_load_all_in_directory_and_prefixes
 libedataserver-1.2.so.27:e_module_load_file
 libedataserver-1.2.so.27:e_module_new
+libedataserver-1.2.so.27:e_ms_oapxbc_acquire_prt_sso_cookie_sync
+libedataserver-1.2.so.27:e_ms_oapxbc_get_accounts_sync
+libedataserver-1.2.so.27:e_ms_oapxbc_get_type
+libedataserver-1.2.so.27:e_ms_oapxbc_new_sync
 libedataserver-1.2.so.27:e_named_parameters_assign
 libedataserver-1.2.so.27:e_named_parameters_clear
 libedataserver-1.2.so.27:e_named_parameters_count
@@ -3601,6 +3606,7 @@ libedataserver-1.2.so.27:e_network_monitor_set_gio_name
 libedataserver-1.2.so.27:e_oauth2_service_base_get_type
 libedataserver-1.2.so.27:e_oauth2_service_can_process
 libedataserver-1.2.so.27:e_oauth2_service_delete_token_sync
+libedataserver-1.2.so.27:e_oauth2_service_dup_credentials_prompter_cookies_sync
 libedataserver-1.2.so.27:e_oauth2_service_extract_authorization_code
 libedataserver-1.2.so.27:e_oauth2_service_extract_error_message
 libedataserver-1.2.so.27:e_oauth2_service_get_access_token_sync
@@ -3678,6 +3684,7 @@ libedataserver-1.2.so.27:e_soup_session_dup_credentials
 libedataserver-1.2.so.27:e_soup_session_error_quark
 libedataserver-1.2.so.27:e_soup_session_get_authentication_requires_credentials
 libedataserver-1.2.so.27:e_soup_session_get_force_http1
+libedataserver-1.2.so.27:e_soup_session_get_handle_backoff_responses
 libedataserver-1.2.so.27:e_soup_session_get_log_level
 libedataserver-1.2.so.27:e_soup_session_get_source
 libedataserver-1.2.so.27:e_soup_session_get_ssl_error_details
@@ -3693,6 +3700,7 @@ libedataserver-1.2.so.27:e_soup_session_send_message_simple_sync
 libedataserver-1.2.so.27:e_soup_session_send_message_sync
 libedataserver-1.2.so.27:e_soup_session_set_credentials
 libedataserver-1.2.so.27:e_soup_session_set_force_http1
+libedataserver-1.2.so.27:e_soup_session_set_handle_backoff_responses
 libedataserver-1.2.so.27:e_soup_session_setup_logging
 libedataserver-1.2.so.27:e_soup_session_util_get_force_http1_supported
 libedataserver-1.2.so.27:e_soup_session_util_get_message_bytes
@@ -4206,6 +4214,7 @@ libedataserver-1.2.so.27:e_source_webdav_get_resource_path
 libedataserver-1.2.so.27:e_source_webdav_get_resource_query
 libedataserver-1.2.so.27:e_source_webdav_get_ssl_trust
 libedataserver-1.2.so.27:e_source_webdav_get_ssl_trust_response
+libedataserver-1.2.so.27:e_source_webdav_get_timeout
 libedataserver-1.2.so.27:e_source_webdav_get_type
 libedataserver-1.2.so.27:e_source_webdav_notes_dup_default_ext
 libedataserver-1.2.so.27:e_source_webdav_notes_get_default_ext
@@ -4221,6 +4230,7 @@ libedataserver-1.2.so.27:e_source_webdav_set_resource_path
 libedataserver-1.2.so.27:e_source_webdav_set_resource_query
 libedataserver-1.2.so.27:e_source_webdav_set_ssl_trust
 libedataserver-1.2.so.27:e_source_webdav_set_ssl_trust_response
+libedataserver-1.2.so.27:e_source_webdav_set_timeout
 libedataserver-1.2.so.27:e_source_webdav_set_uri
 libedataserver-1.2.so.27:e_source_webdav_unset_temporary_ssl_trust
 libedataserver-1.2.so.27:e_source_webdav_update_ssl_trust
@@ -4269,6 +4279,7 @@ libedataserver-1.2.so.27:e_util_get_directory_variants
 libedataserver-1.2.so.27:e_util_get_source_full_name
 libedataserver-1.2.so.27:e_util_gthread_id
 libedataserver-1.2.so.27:e_util_guess_source_is_readonly
+libedataserver-1.2.so.27:e_util_host_is_in_domain
 libedataserver-1.2.so.27:e_util_identity_can_send
 libedataserver-1.2.so.27:e_util_safe_free_string
 libedataserver-1.2.so.27:e_util_slist_to_strv

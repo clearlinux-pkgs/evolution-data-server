@@ -12,8 +12,8 @@ libgtk-3.so.0
 libgtk-4.so.1
 libical-glib.so.3
 libical.so.3
-libicui18n.so.73
-libicuuc.so.73
+libicui18n.so.75
+libicuuc.so.75
 libjson-glib-1.0.so.0
 liblber.so.2
 libldap.so.2
@@ -26,6 +26,7 @@ libsoup-3.0.so.0
 libsqlite3.so.0
 libssl3.so
 libstdc++.so.6
+libuuid.so.1
 libwebkit2gtk-4.1.so.0
 libxml2.so.2
 libz.so.1
